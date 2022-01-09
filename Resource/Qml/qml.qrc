@@ -24,5 +24,6 @@
         <file>PanelRightCommandScreen.qml</file>
         <file>RobotCommandScreen.qml</file>
         <file>RFIDCommandScreen.qml</file>
+        <file>Common/RadioButtonVerCustom.qml</file>
     </qresource>
 </RCC>

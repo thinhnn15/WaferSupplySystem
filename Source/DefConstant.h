@@ -22,6 +22,8 @@
 #define STR_INI_RFID_BAUD       "RFID BaudRate"
 #define STR_INI_RFID_DATA_SIZE  "RFID Data Size"
 #define STR_INI_RFID_PARITY     "RFID Parity"
+#define STR_INI_LP_RES_MODE     "Load Port Response Mode (0: ACK, 1: NAK)"
+#define STR_INI_LP_TER_MODE     "Load Port Terminate Mode (0: INF, 1: ABS)"
 
 static const QMap<QString, int> mapComName = {
     { "COM1", ENUMS::COM1},

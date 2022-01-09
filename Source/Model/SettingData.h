@@ -16,6 +16,8 @@ class CSettingData : public QObject
     Q_PROPERTY(int rfidDataSize READ rfidDataSize WRITE setRfidDataSize NOTIFY rfidDataSizeChanged)
     Q_PROPERTY(int rfidParity READ rfidParity WRITE setRfidParity NOTIFY rfidParityChanged)
     Q_PROPERTY(int language READ language WRITE setLanguage NOTIFY languageChanged)
+    Q_PROPERTY(int lpResponseMode READ lpResponseMode WRITE setLpResponseMode NOTIFY lpResponseModeChanged)
+    Q_PROPERTY(int lpTerminateMode READ lpTerminateMode WRITE setLpTerminateMode NOTIFY lpTerminateModeChanged)
 
 private:
     int m_lanPortNo;
@@ -28,6 +30,10 @@ private:
     int m_rfidDataSize;
     int m_rfidParity;
     int m_language;
+    int m_lpResponseMode;
+
+    int m_lpTerminateMode;
+
 public:
     CSettingData(QObject* parent = 0);
     int lanPortNo() const
@@ -77,6 +83,16 @@ public:
     int language() const
     {
         return m_language;
+    }
+
+    int lpResponseMode() const
+    {
+        return m_lpResponseMode;
+    }
+
+    int lpTerminateMode() const
+    {
+        return m_lpTerminateMode;
     }
 
 public slots:
@@ -169,6 +185,24 @@ public slots:
         emit languageChanged(m_language);
     }
 
+    void setLpResponseMode(int lpResponseMode)
+    {
+        if (m_lpResponseMode == lpResponseMode)
+            return;
+
+        m_lpResponseMode = lpResponseMode;
+        emit lpResponseModeChanged(m_lpResponseMode);
+    }
+
+    void setLpTerminateMode(int lpTerminateMode)
+    {
+        if (m_lpTerminateMode == lpTerminateMode)
+            return;
+
+        m_lpTerminateMode = lpTerminateMode;
+        emit lpTerminateModeChanged(m_lpTerminateMode);
+    }
+
 signals:
     void lanPortNoChanged(int lanPortNo);
     void lpComNameChanged(int lpComName);
@@ -180,6 +214,8 @@ signals:
     void rfidDataSizeChanged(int rfidDataSize);
     void rfidParityChanged(int rfidParity);
     void languageChanged(int language);
+    void lpResponseModeChanged(int lpResponseMode);
+    void lpTerminateModeChanged(int lpTerminateMode);
 };
 
 #endif // SETTINGDATA_H

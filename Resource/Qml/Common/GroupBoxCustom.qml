@@ -5,13 +5,14 @@ Rectangle {
     height: 50
     border.color: "#000000"
     property string groupName: "Name of Group"
+    property int textSize: 14
 
     Text {
         id: txtNameGR
         x: 4
         y: 2
         text: groupName
-        font.pixelSize: 14
+        font.pixelSize: textSize
         font.bold: true
     }
 

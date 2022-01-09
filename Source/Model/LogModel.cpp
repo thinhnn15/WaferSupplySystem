@@ -79,7 +79,7 @@ void CLogModel::addLogView(QString message, QString dir, QString color)
     this->addLog(CLogInfo(strTime, message, color, dir));
 
     QString dt = "WaferSystem";
-    dt += QDateTime::currentDateTime().toString("dd/MM/yyyy");
+    dt += QDateTime::currentDateTime().toString("yy/MM/dd");
     dt.remove("/");
     dt.remove(":");
     dt += ".log";

@@ -12,6 +12,12 @@
 #include "../Model/LogModel.h"
 #include "../Model/SettingData.h"
 
+enum TypeOfMessage {
+    eSetMessage = 0,
+    eGetMessage = 1,
+    eMovMessage = 2,
+};
+
 class CLoadPortComm : public QObject
 {
     Q_OBJECT
@@ -55,7 +61,7 @@ protected:
     // Check sum calculator
     bool 	RecvChecksumCalculator(QByteArray data, int length);
     bool 	SendChecksumCalculator(QString data, char& CSH, char& CSI);
-    bool	MakeCommandString(int CmdCode, char* CommandLine, bool retry);
+    QString	GetCommandString(int CmdCode);
 
 private:
     CSerialConnection*      m_pSerialConnection;
@@ -69,8 +75,8 @@ private:
 
     // private function
 private:
-    bool    SendResponseMessage(int cmdNo, int type);
-
+    bool    SendResponseMessage(int cmdNo, int typeMsg = eSetMessage);       // ACK: normal response, NAK: rejection response
+    bool    SendTerminationMessage(int cmd);      // INF: normal termination, ABS: abnormal termication
 
 
     bool    SendLPCommand_SET_RESET();
@@ -90,7 +96,6 @@ private:
 
     bool    SendLPCommand_MOV_CULYD();
     bool    SendLPCommand_MOV_CLDMP();
-    bool    SendLPCommand_MOV_LULOD();
     bool    SendLPCommand_MOV_CULOD();
 
 

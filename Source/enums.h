@@ -52,7 +52,18 @@ public:
         PARITY_YES,
         PARITY_MAX,
     };
-
+    enum E_LP_RES_TYPE
+    {
+        LP_RES_ACK = 0,
+        LP_RES_NAK = 1,
+        LP_RES_MAX,
+    };
+    enum E_LP_TER_TYPE
+    {
+        LP_TER_INF = 0,
+        LP_TER_ABS = 1,
+        LP_TER_MAX,
+    };
 };
 //Q_DECLARE_METATYPE(ENUMS::E_LANGUAGE)
 

@@ -66,7 +66,7 @@ void CWaferSupplySystem::OnSaveSetting()
 
 void CWaferSupplySystem::InitApplication()
 {
-    qmlRegisterUncreatableType<ENUMS>("Enum", 1, 1, "Enum", "");
+    qmlRegisterUncreatableType<ENUMS>("Enum", 1, 2, "Enum", "");
     m_pContext = m_pEngine->rootContext();
 
     // Set the model to qml
@@ -175,6 +175,16 @@ void CWaferSupplySystem::ReadConfigFile()
         if(rfidParity >= ENUMS::PARITY_NONE && rfidParity < ENUMS::PARITY_MAX){
             m_settingData.setRfidParity(rfidParity);
         }
+        // Get value for Load Port Response mode (ACK or NAK)
+        int lpResponseMode = settings.value(STR_INI_LP_RES_MODE, 0).toInt();
+        if(lpResponseMode == ENUMS::LP_RES_ACK || lpResponseMode == ENUMS::LP_RES_NAK){
+            m_settingData.setLpResponseMode(lpResponseMode);
+        }
+        // Get value for Load Port Response mode (ACK or NAK)
+        int lpTerminateMode = settings.value(STR_INI_LP_TER_MODE, 0).toInt();
+        if(lpTerminateMode == ENUMS::LP_TER_INF || lpTerminateMode == ENUMS::LP_TER_ABS){
+            m_settingData.setLpTerminateMode(lpTerminateMode);
+        }
         settings.endGroup();
     }
 }
@@ -198,7 +208,8 @@ void CWaferSupplySystem::SaveConfigFile()
         settings.setValue(STR_INI_RFID_BAUD,            reverse_mapBaudRate[m_settingData.rfidBaudRate()]);
         settings.setValue(STR_INI_RFID_DATA_SIZE,       reverse_mapDataSize[m_settingData.rfidDataSize()]);
         settings.setValue(STR_INI_RFID_PARITY,          reverse_mapParity[m_settingData.rfidParity()]);
-
+        settings.setValue(STR_INI_LP_RES_MODE,          m_settingData.lpResponseMode());
+        settings.setValue(STR_INI_LP_TER_MODE,          m_settingData.lpTerminateMode());
         settings.endGroup();
     }
 }

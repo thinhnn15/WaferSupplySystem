@@ -1,5 +1,5 @@
 import QtQuick 2.4
-import Enum 1.1
+import Enum 1.2
 import "./Common"
 import QtQuick.Controls 2.1
 
@@ -303,8 +303,39 @@ Rectangle {
             settingData.setRfidDataSize(cbRFIDDataSize.activeIndex)
             settingData.setRfidParity(cbRFIDParity.activeIndex)
             saveSettingData();
+            aniOpacity.start()
         }
     }
+
+    Text {
+        id: txtSaveStatus
+        text: qsTr("Save config file successful!")
+        anchors.right: parent.right
+        anchors.rightMargin: 8
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 8
+        font.pixelSize: 14
+        color: "green"
+        font.bold: true
+        opacity: 0.0
+    }
+
+    SequentialAnimation{
+        id: aniOpacity
+        NumberAnimation {
+            target: txtSaveStatus
+            properties: "opacity"
+            from: 0.0; to: 1.0
+            easing.type: Easing.OutExpo; duration: 1000
+        }
+        NumberAnimation {
+            target: txtSaveStatus
+            properties: "opacity"
+            from: 1.0; to: 0.0
+            easing.type: Easing.OutExpo; duration: 1000
+        }
+    }
+
     function changeLanguage(num){
         appTrans.updateLanguage(num);
         radioEN.isActive = false;
