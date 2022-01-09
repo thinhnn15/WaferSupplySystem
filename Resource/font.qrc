@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Font/ZenKakuGothicNew-Light.ttf</file>
+        <file>Font/ZenKakuGothicNew-Medium.ttf</file>
+        <file>Font/ZenKakuGothicNew-Regular.ttf</file>
+    </qresource>
+</RCC>
