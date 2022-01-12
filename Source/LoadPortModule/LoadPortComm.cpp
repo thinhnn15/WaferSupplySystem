@@ -284,6 +284,8 @@ MAPCMDNAME MapLPNameCmd = {
     {Cmd_MOV_FNZUP, "FNZUP"},
     {Cmd_MOV_FNZDW, "FNZDW"},
     {Cmd_MOV_RDID1, "RDID1"},
+    {Cmd_EVE_MANSW, "MANSW"},
+    {Cmd_EVE_MANOF, "MANOF"},
 };
 
 
@@ -642,6 +644,16 @@ void CLoadPortComm::OnParserCommand(QByteArray data)
         }
     }
 
+}
+
+void CLoadPortComm::OnSendCommand(QByteArray data)
+{
+    if(data == "MANSW"){
+        SendTerminationMessage(Cmd_EVE_MANSW);
+    }
+    else if(data == "MANOF"){
+        SendTerminationMessage(Cmd_EVE_MANOF);
+    }
 }
 
 bool CLoadPortComm::RecvChecksumCalculator(QByteArray data, int length)
@@ -1308,7 +1320,17 @@ bool CLoadPortComm::SendResponseMessage(int cmdNo, int typeMsg)
             cmdResponse = headMessage + MapLPNameCmd[cmdNo] + "/00000010000000011111;";
         }
         else if(cmdNo == Cmd_GET_MAPRD){
-            cmdResponse = headMessage + MapLPNameCmd[cmdNo] + "/1010101010101010101010101;";
+            QString mapInfo = "/";
+            for(int i = 0; i < MAX_WAFER_SLOT; i++){
+                if(g_listInfo.getSlotSts(i) == ENUMS::SLOT_HAS_WAFER){
+                    mapInfo += "1";
+                }
+                else if (g_listInfo.getSlotSts(i) == ENUMS::SLOT_NO_WAFER){
+                    mapInfo += "0";
+                }
+            }
+            mapInfo += ";";
+            cmdResponse = headMessage + MapLPNameCmd[cmdNo] + mapInfo;
         }
     }
     // Build sending command

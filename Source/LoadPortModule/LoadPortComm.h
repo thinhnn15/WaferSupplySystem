@@ -11,6 +11,7 @@
 #include "../DefConstant.h"
 #include "../Model/LogModel.h"
 #include "../Model/SettingData.h"
+#include "../Global.h"
 
 enum TypeOfMessage {
     eSetMessage = 0,
@@ -56,6 +57,7 @@ public slots:
     // slot handle from CommunicationSocket class
     void    OnReceiveData(QByteArray data);
     void    OnParserCommand(QByteArray data);
+    void    OnSendCommand(QByteArray data);
 
 protected:
     // Check sum calculator

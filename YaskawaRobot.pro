@@ -8,7 +8,9 @@ QT += serialport
 SOURCES += \
     Source/Common/LanConnection.cpp \
     Source/Common/SerialConnection.cpp \
+    Source/Global.cpp \
     Source/LoadPortModule/LoadPortComm.cpp \
+    Source/Model/ListSlot.cpp \
     Source/RFIDModule/RFIDComm.cpp \
     Source/RobotModule/RobotComm.cpp \
     Source/main.cpp \
@@ -50,8 +52,10 @@ HEADERS += \
     Source/Common/LanConnection.h \
     Source/Common/SerialConnection.h \
     Source/DefConstant.h \
+    Source/Global.h \
     Source/LoadPortModule/LoadPortComm.h \
     Source/Model/AlignerInfo.h \
+    Source/Model/ListSlot.h \
     Source/Model/LoadPortInfo.h \
     Source/Model/LogModel.h \
     Source/Model/RobotArmInfo.h \

@@ -1,4 +1,5 @@
 import QtQuick 2.4
+import Enum 1.3
 
 Rectangle {
     id: recCassette
@@ -14,11 +15,11 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
         spacing: 2
-        model: 30
+        model: listSlot
         delegate: Rectangle {
             width: 50
             height: 6
-            color: "#35CB49"
+            color: (status === Enum.SLOT_HAS_WAFER) ? "#35CB49" : "gray"
             border.color: "#707070"
             radius: 5
         }

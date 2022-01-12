@@ -9,6 +9,7 @@ CLoadPortController::CLoadPortController(CLogModel *log, QObject *parent)
     connect(m_pLPComm, SIGNAL(destroyed(QObject*)), m_pSendCmdThread, SLOT(quit()));
     connect(m_pSendCmdThread, SIGNAL(finished()), m_pSendCmdThread, SLOT(deleteLater()));
     QObject::connect(this, SIGNAL(parserCommand(QByteArray)), m_pLPComm, SLOT(OnParserCommand(QByteArray)));
+    QObject::connect(this, SIGNAL(sendCommand(QByteArray)), m_pLPComm, SLOT(OnSendCommand(QByteArray)));
     QObject::connect(m_pLPComm, SIGNAL(handleLPMsg()), this, SLOT(OnHandleReceiveMsg()));
     QObject::connect(m_pLPComm, SIGNAL(addOperationLog(QString, QString)), this, SLOT(OnLPLog(QString, QString)));
     m_pSendCmdThread->start();
@@ -23,6 +24,20 @@ void CLoadPortController::SetSettingData(CSettingData *data)
 bool CLoadPortController::OpenSerialCom()
 {
     return m_pLPComm->OpenComPort();
+}
+
+bool CLoadPortController::AddMessageToQueue(QString msg)
+{
+    bool r = true;
+    QByteArray message = msg.toUtf8();
+//    m_queueReceiveMsg.push_back(message);
+    sendLPEvent(message);
+    return r;
+}
+
+void CLoadPortController::sendLPEvent(QByteArray msg)
+{
+    emit sendCommand(msg);
 }
 
 void CLoadPortController::OnHandleReceiveMsg()

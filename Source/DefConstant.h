@@ -11,6 +11,7 @@
 #define START_CHAR_RFID 0x53
 #define START_END_RFID  0x0d
 #define CONFIG_FILE "/Setting.ini"
+#define MAX_WAFER_SLOT  30
 
 #define STR_INI_LANG            "Language(0: EN, 1: JP, 2: CN, 3: KR, 4: VI)"
 #define STR_INI_RB_PORTNO       "Robot Port No"
@@ -293,6 +294,8 @@ enum LoadPortCommand {
     Cmd_MOV_RDID2,
     Cmd_MOV_WRID1,
     Cmd_MOV_WRID2,
+    Cmd_EVE_MANSW,
+    Cmd_EVE_MANOF,
 };
 
 #endif // DEFCONSTANT_H

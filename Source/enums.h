@@ -8,6 +8,13 @@ class ENUMS : public QObject
 {
     Q_OBJECT
     Q_ENUMS(E_LANGUAGE)
+    Q_ENUMS(E_COM_NO)
+    Q_ENUMS(E_COM_BAUD)
+    Q_ENUMS(E_COM_SIZE)
+    Q_ENUMS(E_COM_PARITY)
+    Q_ENUMS(E_LP_RES_TYPE)
+    Q_ENUMS(E_LP_TER_TYPE)
+    Q_ENUMS(E_SLOT_STS)
 public:
     enum E_LANGUAGE
     {
@@ -17,6 +24,11 @@ public:
         KR = 3,
         VI = 4,
         LANG_MAX,
+    };
+    enum E_SLOT_STS
+    {
+        SLOT_HAS_WAFER  = 0,
+        SLOT_NO_WAFER   = 1,
     };
     enum E_COM_NO
     {

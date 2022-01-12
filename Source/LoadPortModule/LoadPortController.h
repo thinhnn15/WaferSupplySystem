@@ -11,9 +11,13 @@ public:
     CLoadPortController(CLogModel* log, QObject* parent = 0);
     void SetSettingData(CSettingData* data);
     bool OpenSerialCom();
+    bool AddMessageToQueue(QString msg);
+private:
+    void sendLPEvent(QByteArray msg);
 
 signals:
     void parserCommand(QByteArray);
+    void sendCommand(QByteArray);
     void updateLPLog(QString, QString);
 
 public slots:

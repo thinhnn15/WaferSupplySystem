@@ -8,6 +8,15 @@ CWaferSupplySystem::CWaferSupplySystem(QObject *parent)
     m_pRobotCtrl        = new CRobotController(&m_logModel);
     m_pLPCtrl           = new CLoadPortController(&m_logModel);
     m_pRFIDCtrl         = new CRFIDController(&m_logModel);
+    CSlotInfo slot;
+    for(int i = 0; i < MAX_WAFER_SLOT; i++){
+        if(i < 13){
+            g_listInfo.addSlot(CSlotInfo(ENUMS::SLOT_HAS_WAFER));
+        }
+        else {
+            g_listInfo.addSlot(CSlotInfo(ENUMS::SLOT_NO_WAFER));
+        }
+    }
 
     m_pRobotCtrl->SetSettingData(&m_settingData);
     m_pLPCtrl->SetSettingData(&m_settingData);
@@ -56,6 +65,13 @@ void CWaferSupplySystem::OnChangedScreen()
     if(settingScreen){
         QObject::connect(settingScreen, SIGNAL(saveSettingData()), this, SLOT(OnSaveSetting()));
     }
+    QObject *lpCommandScreen = m_pEngine->rootObjects().first()->findChild<QObject*>("lpCommandScreen");
+    if(lpCommandScreen){
+        QObject::connect(lpCommandScreen, SIGNAL(sendLPEvent(QString)), this, SLOT(OnSendLPEvent(QString)));
+        QObject::connect(lpCommandScreen, SIGNAL(setAllSlotStatus(int)), this, SLOT(OnChangeAllSlotStatus(int)));
+        QObject::connect(lpCommandScreen, SIGNAL(setSlotStatus(int, int)), this, SLOT(OnChangeSlotStatus(int, int)));
+
+    }
 }
 
 void CWaferSupplySystem::OnSaveSetting()
@@ -64,9 +80,28 @@ void CWaferSupplySystem::OnSaveSetting()
     this->SaveConfigFile();
 }
 
+void CWaferSupplySystem::OnSendLPEvent(QString msg)
+{
+    m_pLPCtrl->AddMessageToQueue(msg);
+}
+
+void CWaferSupplySystem::OnChangeAllSlotStatus(int status)
+{
+    for(int i = 0; i < MAX_WAFER_SLOT; i++){
+        if(status == ENUMS::SLOT_HAS_WAFER || status == ENUMS::SLOT_NO_WAFER){        // Has Wafer
+            g_listInfo.changeSlotInfo(i, status);
+        }
+    }
+}
+
+void CWaferSupplySystem::OnChangeSlotStatus(int slotNo, int status)
+{
+    g_listInfo.changeSlotInfo(slotNo, status);
+}
+
 void CWaferSupplySystem::InitApplication()
 {
-    qmlRegisterUncreatableType<ENUMS>("Enum", 1, 2, "Enum", "");
+    qmlRegisterUncreatableType<ENUMS>("Enum", 1, 3, "Enum", "");
     m_pContext = m_pEngine->rootContext();
 
     // Set the model to qml
@@ -74,7 +109,10 @@ void CWaferSupplySystem::InitApplication()
     m_pContext->setContextProperty("WfStageInfo", m_pWfStageInfo);
     m_logModel.addLogView("Start Application", "Info", "green");
     m_pContext->setContextProperty("logModel", &m_logModel);
+    m_pContext->setContextProperty("listSlot", &g_listInfo);
     m_pContext->setContextProperty("settingData", &m_settingData);
+
+    m_pContext->setContextProperty("cassetteInfo", QVariant::fromValue(m_cassetteInfo));
     //    QObject::connect(m_pRobotCtrl, SIGNAL(updateGUI()), this, SLOT(OnUpdateUI()));
     QObject::connect(m_pRobotCtrl, SIGNAL(updateRBLog(QString, QString)), this, SLOT(OnUpdateRBLog(QString, QString)));
     QObject::connect(m_pLPCtrl, SIGNAL(updateLPLog(QString, QString)), this, SLOT(OnUpdateLPLog(QString, QString)));
@@ -101,11 +139,6 @@ void CWaferSupplySystem::InitFont()
 void CWaferSupplySystem::SetQmlAppEngine(QQmlApplicationEngine *engine)
 {
     this->m_pEngine = engine;
-}
-
-int CWaferSupplySystem::GetLanguage() const
-{
-    return 0;
 }
 
 void CWaferSupplySystem::ReadConfigFile()

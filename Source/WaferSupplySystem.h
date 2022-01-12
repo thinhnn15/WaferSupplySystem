@@ -13,11 +13,13 @@
 #include "Model/WfStageInfo.h"
 #include "Model/LogModel.h"
 #include "Model/SettingData.h"
+#include "Model/ListSlot.h"
 #include "RobotModule/RobotController.h"
 #include "LoadPortModule/LoadPortController.h"
 #include "RFIDModule/RFIDController.h"
 #include "enums.h"
 #include "Util.h"
+#include "Global.h"
 
 class CWaferSupplySystem : public QObject
 {
@@ -35,6 +37,9 @@ public slots:
     void OnUpdateRFIDLog(QString msg, QString dir);
     void OnChangedScreen();
     void OnSaveSetting();
+    void OnSendLPEvent(QString msg);
+    void OnChangeAllSlotStatus(int status);
+    void OnChangeSlotStatus(int slotNo, int status);
 
 private:
     QQmlApplicationEngine*  m_pEngine;
@@ -46,11 +51,11 @@ private:
     CRFIDController*        m_pRFIDCtrl;
     CLogModel               m_logModel;
     CSettingData            m_settingData;
+    QList<QObject*>         m_cassetteInfo;
 public:
     void    InitApplication();
     void    InitFont();
     void    SetQmlAppEngine(QQmlApplicationEngine* engine);
-    int     GetLanguage() const;
     void    ReadConfigFile();
     void    SaveConfigFile();
     void    InitConnection();

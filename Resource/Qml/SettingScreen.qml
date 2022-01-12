@@ -1,5 +1,5 @@
 import QtQuick 2.4
-import Enum 1.2
+import Enum 1.3
 import "./Common"
 import QtQuick.Controls 2.1
 

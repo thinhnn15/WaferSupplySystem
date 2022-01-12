@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import Enum 1.2
+import Enum 1.3
 import "Common"
 
 Rectangle {
@@ -7,6 +7,10 @@ Rectangle {
     height: 543
     color: "#e0e0e0"
     radius: 5
+    objectName: "lpCommandScreen"
+    signal sendLPEvent(string name)
+    signal setAllSlotStatus(int status)
+    signal setSlotStatus(int slotNo, int status)
     Text {
         id: txtLPCommandScreen
         text: qsTr("Setting default command for Load Port:")
@@ -32,9 +36,9 @@ Rectangle {
             x: 8
             y: 23
             nameRadio: "ACK"
-            isActive: true
+            isActive: (settingData.lpResponseMode == Enum.LP_RES_ACK) ? true : false
             onChangeStatus: {
-                changeLPResponseType(0/*Enum.LP_RES_ACK*/);
+                changeLPResponseType(Enum.LP_RES_ACK);
             }
         }
 
@@ -43,9 +47,9 @@ Rectangle {
             x: 76
             y: 23
             nameRadio: "NAK"
-            isActive: false
+            isActive: (settingData.lpResponseMode == Enum.LP_RES_NAK) ? true : false
             onChangeStatus: {
-                changeLPResponseType(1/*Enum.LP_RES_NAK*/);
+                changeLPResponseType(Enum.LP_RES_NAK);
             }
         }
     }
@@ -62,9 +66,9 @@ Rectangle {
             x: 8
             y: 23
             nameRadio: "INF"
-            isActive: true
+            isActive: (settingData.lpTerminateMode == Enum.LP_TER_INF) ? true : false
             onChangeStatus: {
-                changeLPTerminateType(0/*Enum.LP_TER_INF*/);
+                changeLPTerminateType(Enum.LP_TER_INF);
             }
         }
 
@@ -73,9 +77,9 @@ Rectangle {
             x: 76
             y: 23
             nameRadio: "ABS"
-            isActive: false
+            isActive: (settingData.lpTerminateMode == Enum.LP_TER_ABS) ? true : false
             onChangeStatus: {
-                changeLPTerminateType(1/*Enum.LP_TER_ABS*/);
+                changeLPTerminateType(Enum.LP_TER_ABS);
             }
         }
         groupName: "Default for terminate message"
@@ -124,7 +128,7 @@ Rectangle {
         id: grLPSlotInfo
         x: 14
         y: 176
-        width: 510
+        width: 520
         height: 359
         textSize: 12
         groupName: "Setting Load Port Slot Information"
@@ -137,13 +141,15 @@ Rectangle {
             anchors.bottomMargin: 5
             anchors.left: parent.left
             anchors.leftMargin: 8
-            model: 30
+            model: listSlot
             enabled: false
+            verticalLayoutDirection: ListView.BottomToTop
+            spacing: 1
             delegate: Rectangle {
                 width: listLPInformation.width
-                height: listLPInformation.height / 30
-                color: "green"
-                border.color: "white"
+                height: listLPInformation.height / 30 - 1
+                color: (status === Enum.SLOT_HAS_WAFER) ? "green" : "gray"
+                border.color: "#707070"
                 Text {
                     text: index+1
                     anchors.centerIn: parent
@@ -152,95 +158,87 @@ Rectangle {
             }
         }
 
-        Rectangle {
+        GroupBoxCustom {
             id: recSettingAllSlot
-            x: 256
-            y: 8
-            width: 223
-            height: 84
-            color: "transparent"
-            border.color: "gray"
+            x: 267
+            y: 19
+            width: 245
+            height: 106
+            groupName: "Set status for all slots"
 
             Button1State {
                 id: btnAllSlotSet
-                x: 123
-                y: 37
+                x: 8
+                y: 67
                 width: 80
                 height: 31
                 color: "#009dff"
                 radius: 3
                 border.color: "#009dff"
                 nameButton: "Set"
+                onClick: {
+                    var status = cbAllSlotSetting.activeIndex;
+                    setAllSlotStatus(status);
+                }
             }
 
             ComboBoxCustom {
                 id: cbAllSlotSetting
-                x: 75
-                y: 4
+                x: 83
+                y: 29
                 width: 128
                 height: 27
                 models: ["Has Wafer", "No Wafer"]
             }
 
             Text {
-                id: txtSetting
-                x: 9
-                y: 10
-                text: qsTr("Set all slot")
-                font.pixelSize: 14
-            }
-
-            Text {
                 id: element
-                x: 9
-                y: 45
-                color: "#ff0000"
-                text: qsTr("TBD")
-                font.bold: true
-                font.pixelSize: 20
+                x: 8
+                y: 35
+                width: 69
+                height: 15
+                text: qsTr("Status:")
+                font.pixelSize: 12
             }
         }
 
-        Rectangle {
+        GroupBoxCustom {
             id: recSettingAllSlot1
-            x: 256
-            y: 108
-            width: 223
-            height: 125
-            color: "#00000000"
+            x: 267
+            y: 147
+            width: 245
+            height: 130
+            groupName: "Set status for each slot"
             Button1State {
                 id: btn1SlotSet
-                x: 124
-                y: 86
+                x: 8
+                y: 94
                 width: 80
                 height: 31
                 color: "#009dff"
                 radius: 3
                 nameButton: "Set"
                 border.color: "#009dff"
+                onClick: {
+                    var slotNo = cbSlotNo.activeIndex;
+                    var status = cbSlotInfo.activeIndex;
+                    setSlotStatus(slotNo, status);
+                }
             }
 
             ComboBoxCustom {
                 id: cbSlotInfo
-                x: 76
-                y: 45
+                x: 86
+                y: 61
                 width: 128
                 height: 27
                 models: ["Has Wafer", "No Wafer"]
             }
 
-            Text {
-                id: txtSetting1
-                x: 9
-                y: 10
-                text: qsTr("Set slot")
-                font.pixelSize: 14
-            }
-
             ComboBoxCustom {
                 id: cbSlotNo
-                x: 76
-                y: 5
+                x: 86
+                y: 27
                 width: 128
                 height: 27
                 models: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
@@ -251,13 +249,62 @@ Rectangle {
             Text {
                 id: element1
                 x: 8
-                y: 94
-                color: "#ff0000"
-                text: qsTr("TBD")
-                font.bold: true
-                font.pixelSize: 20
+                y: 33
+                text: qsTr("Slot No:")
+                font.pixelSize: 12
             }
-            border.color: "#808080"
+
+            Text {
+                id: element2
+                x: 8
+                y: 67
+                width: 69
+                height: 15
+                text: qsTr("Status:")
+                font.pixelSize: 12
+            }
+        }
+
+        GroupBoxCustom {
+            id: grLPEvent
+            x: 267
+            y: 298
+            width: 245
+            height: 56
+            textSize: 12
+            groupName: qsTr("Send  Load Port Event")
+
+            Button1State {
+                id: btnLPMansw
+                x: 8
+                y: 20
+                width: 80
+                height: 31
+                color: "#009dff"
+                radius: 3
+                border.color: "#009dff"
+                nameButton: "MANSW"
+                onClick: {
+                    sendLPEvent("MANSW");
+                }
+            }
+
+            Button1State {
+                id: btnLPManof
+                x: 156
+                y: 20
+                width: 80
+                height: 31
+                color: "#009dff"
+                radius: 3
+                anchors.verticalCenterOffset: 0
+                anchors.verticalCenter: btnLPMansw.verticalCenter
+                border.color: "#009dff"
+                nameButton: "MANOF"
+                onClick: {
+                    sendLPEvent("MANOF");
+                }
+            }
         }
     }
 
@@ -265,10 +312,10 @@ Rectangle {
         radioResponseACK.isActive = false;
         radioResponseNAK.isActive = false;
         switch(num){
-        case 0/*Enum.LP_RES_ACK*/:
+        case Enum.LP_RES_ACK:
             radioResponseACK.isActive = true;
             break;
-        case 1/*Enum.LP_RES_NAK*/:
+        case Enum.LP_RES_NAK:
             radioResponseNAK.isActive = true;
             break;
         default:
@@ -282,10 +329,10 @@ Rectangle {
         radioTerminateINF.isActive = false;
         radioTerminateABS.isActive = false;
         switch(num){
-        case 0/*Enum.LP_TER_INF*/:
+        case Enum.LP_TER_INF:
             radioTerminateINF.isActive = true;
             break;
-        case 1/*Enum.LP_TER_ABS*/:
+        case Enum.LP_TER_ABS:
             radioTerminateABS.isActive = true;
             break;
         default:
