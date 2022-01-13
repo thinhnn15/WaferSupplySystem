@@ -13,13 +13,13 @@ Rectangle {
     signal setSlotStatus(int slotNo, int status)
     Text {
         id: txtLPCommandScreen
-        text: qsTr("Setting default command for Load Port:")
+        text: qsTr("Setting default command for Load Port:") + appTrans.emptyString
         font.bold: true
         anchors.left: parent.left
         anchors.leftMargin: 14
         anchors.top: parent.top
         anchors.topMargin: 8
-        font.pixelSize: 12
+        font.pixelSize: 14
     }
 
     GroupBoxCustom {
@@ -28,8 +28,8 @@ Rectangle {
         y: 29
         width: 245
         height: 47
-        textSize: 12
-        groupName: "Default for response message"
+        textSize: 14
+        groupName: qsTr("Default for response message") + appTrans.emptyString
 
         RadioButtonVerCustom {
             id: radioResponseACK
@@ -56,11 +56,11 @@ Rectangle {
 
     GroupBoxCustom {
         id: grTerminateType
-        x: 279
+        x: 341
         y: 29
         width: 245
         height: 47
-        textSize: 12
+        textSize: 14
         RadioButtonVerCustom {
             id: radioTerminateINF
             x: 8
@@ -82,7 +82,7 @@ Rectangle {
                 changeLPTerminateType(Enum.LP_TER_ABS);
             }
         }
-        groupName: "Default for terminate message"
+        groupName: qsTr("Default for terminate message") + appTrans.emptyString
     }
 
     GroupBoxCustom {
@@ -91,8 +91,8 @@ Rectangle {
         y: 95
         width: 245
         height: 57
-        textSize: 12
-        groupName: "Setting Load Port Version"
+        textSize: 14
+        groupName: qsTr("Setting Load Port Version") + appTrans.emptyString
 
         TextEdit {
             id: txtLPVersion
@@ -107,11 +107,11 @@ Rectangle {
 
     GroupBoxCustom {
         id: grLPState
-        x: 279
+        x: 341
         y: 95
         width: 245
         height: 57
-        textSize: 12
+        textSize: 14
         TextEdit {
             id: txtLPState
             x: 8
@@ -121,24 +121,24 @@ Rectangle {
             isReadOnly: true
             content: "00000010000000011111"
         }
-        groupName: "Setting Load Port State"
+        groupName: qsTr("Setting Load Port State") + appTrans.emptyString
     }
 
     GroupBoxCustom {
         id: grLPSlotInfo
         x: 14
         y: 176
-        width: 520
+        width: 572
         height: 359
-        textSize: 12
-        groupName: "Setting Load Port Slot Information"
+        textSize: 14
+        groupName: qsTr("Setting Load Port Slot Information") + appTrans.emptyString
         ListView {
             id: listLPInformation
-            y: 18
+            y: 20
             width: 225
             height: 336
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 5
+            anchors.bottomMargin: 3
             anchors.left: parent.left
             anchors.leftMargin: 8
             model: listSlot
@@ -154,6 +154,7 @@ Rectangle {
                     text: index+1
                     anchors.centerIn: parent
                     color: "white"
+                    font.pixelSize: 12
                 }
             }
         }
@@ -161,10 +162,10 @@ Rectangle {
         GroupBoxCustom {
             id: recSettingAllSlot
             x: 267
-            y: 19
-            width: 245
+            y: 21
+            width: 297
             height: 106
-            groupName: "Set status for all slots"
+            groupName: qsTr("Set status for all slots") + appTrans.emptyString
 
             Button1State {
                 id: btnAllSlotSet
@@ -175,7 +176,7 @@ Rectangle {
                 color: "#009dff"
                 radius: 3
                 border.color: "#009dff"
-                nameButton: "Set"
+                nameButton: qsTr("Set") + appTrans.emptyString
                 onClick: {
                     var status = cbAllSlotSetting.activeIndex;
                     setAllSlotStatus(status);
@@ -184,7 +185,7 @@ Rectangle {
 
             ComboBoxCustom {
                 id: cbAllSlotSetting
-                x: 83
+                x: 96
                 y: 29
                 width: 128
                 height: 27
@@ -198,7 +199,7 @@ Rectangle {
                 width: 69
                 height: 15
                 text: qsTr("Status:")
-                font.pixelSize: 12
+                font.pixelSize: 14
             }
         }
 
@@ -206,9 +207,9 @@ Rectangle {
             id: recSettingAllSlot1
             x: 267
             y: 147
-            width: 245
+            width: 297
             height: 130
-            groupName: "Set status for each slot"
+            groupName: qsTr("Set status for each slot") + appTrans.emptyString
             Button1State {
                 id: btn1SlotSet
                 x: 8
@@ -217,7 +218,7 @@ Rectangle {
                 height: 31
                 color: "#009dff"
                 radius: 3
-                nameButton: "Set"
+                nameButton: qsTr("Set") + appTrans.emptyString
                 border.color: "#009dff"
                 onClick: {
                     var slotNo = cbSlotNo.activeIndex;
@@ -228,7 +229,7 @@ Rectangle {
 
             ComboBoxCustom {
                 id: cbSlotInfo
-                x: 86
+                x: 100
                 y: 61
                 width: 128
                 height: 27
@@ -237,7 +238,7 @@ Rectangle {
 
             ComboBoxCustom {
                 id: cbSlotNo
-                x: 86
+                x: 100
                 y: 27
                 width: 128
                 height: 27
@@ -250,8 +251,8 @@ Rectangle {
                 id: element1
                 x: 8
                 y: 33
-                text: qsTr("Slot No:")
-                font.pixelSize: 12
+                text: qsTr("Slot No:") + appTrans.emptyString
+                font.pixelSize: 14
             }
 
             Text {
@@ -260,8 +261,8 @@ Rectangle {
                 y: 67
                 width: 69
                 height: 15
-                text: qsTr("Status:")
-                font.pixelSize: 12
+                text: qsTr("Status:") + appTrans.emptyString
+                font.pixelSize: 14
             }
         }
 
@@ -269,10 +270,10 @@ Rectangle {
             id: grLPEvent
             x: 267
             y: 298
-            width: 245
+            width: 297
             height: 56
-            textSize: 12
-            groupName: qsTr("Send  Load Port Event")
+            textSize: 14
+            groupName: qsTr("Send Load Port Event") + appTrans.emptyString
 
             Button1State {
                 id: btnLPMansw
@@ -291,7 +292,7 @@ Rectangle {
 
             Button1State {
                 id: btnLPManof
-                x: 156
+                x: 105
                 y: 20
                 width: 80
                 height: 31

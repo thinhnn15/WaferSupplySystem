@@ -8,7 +8,6 @@ CWaferSupplySystem::CWaferSupplySystem(QObject *parent)
     m_pRobotCtrl        = new CRobotController(&m_logModel);
     m_pLPCtrl           = new CLoadPortController(&m_logModel);
     m_pRFIDCtrl         = new CRFIDController(&m_logModel);
-    CSlotInfo slot;
     for(int i = 0; i < MAX_WAFER_SLOT; i++){
         if(i < 13){
             g_listInfo.addSlot(CSlotInfo(ENUMS::SLOT_HAS_WAFER));
@@ -128,7 +127,7 @@ void CWaferSupplySystem::InitApplication()
 
 void CWaferSupplySystem::InitFont()
 {
-    qint32 fontId = QFontDatabase::addApplicationFont(":/Resource/Font/ZenKakuGothicNew-Medium.ttf");
+    qint32 fontId = QFontDatabase::addApplicationFont(":/Font/ZenKakuGothicNew-Medium.ttf");
     if(fontId >= 0){
         QStringList fontList = QFontDatabase::applicationFontFamilies(fontId);
         QString family = fontList.at(0);

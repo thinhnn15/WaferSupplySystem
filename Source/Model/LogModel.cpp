@@ -73,7 +73,7 @@ void CLogModel::addLogView(QString message, QString dir, QString color)
 {
     static QMutex mutex;
     mutex.lock();
-    QString time_format = "yyyy-MM-dd  HH:mm:ss";
+    QString time_format = "yyyy-MM-dd HH:mm:ss";
     QDateTime dateTime = dateTime.currentDateTime();
     QString strTime = dateTime.toString(time_format);
     this->addLog(CLogInfo(strTime, message, color, dir));

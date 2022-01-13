@@ -8,7 +8,7 @@ Item {
     signal requestChangeScreen(var screenNum)
     Button {
         id: btnLPCmdSetting
-        nameButton: "Load Port"
+        nameButton:  qsTr("Load Port") + appTrans.emptyString
         isActive: true
         height: 40
         radius: 5
@@ -26,7 +26,7 @@ Item {
     Button {
         id: btnRobotCmdSetting
         x: 0
-        nameButton: "Robot"
+        nameButton: qsTr("Robot") + appTrans.emptyString
         height: 40
         radius: 5
         anchors.top: btnLPCmdSetting.bottom
@@ -43,7 +43,7 @@ Item {
     Button {
         id: btnRFIDCmdSetting
         x: 0
-        nameButton: "RFID"
+        nameButton: qsTr("RFID") + appTrans.emptyString
         height: 40
         radius: 5
         anchors.top: btnRobotCmdSetting.bottom

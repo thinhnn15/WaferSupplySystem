@@ -24,7 +24,7 @@ Item {
             anchors.left: parent.left
             anchors.leftMargin: 5
             text: content
-            font.pixelSize: 12
+            font.pixelSize: 14
         }
     }
 }

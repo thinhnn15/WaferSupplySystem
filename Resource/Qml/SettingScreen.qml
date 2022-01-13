@@ -52,7 +52,8 @@ Rectangle {
             y: 31
             width: 140
             height: 26
-            models: ["COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9"]
+            models: ["COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "COM10",
+                    "COM11", "COM12", "COM13", "COM14", "COM15", "COM16", "COM17", "COM18", "COM19", "COM20"]
             activeIndex: settingData.lpComName
         }
 
@@ -173,7 +174,8 @@ Rectangle {
             y: 31
             width: 140
             height: 26
-            models: ["COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9"]
+            models: ["COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9", "COM10",
+                    "COM11", "COM12", "COM13", "COM14", "COM15", "COM16", "COM17", "COM18", "COM19", "COM20"]
             activeIndex: settingData.rfidComName
         }
 
@@ -309,7 +311,7 @@ Rectangle {
 
     Text {
         id: txtSaveStatus
-        text: qsTr("Save config file successful!")
+        text: qsTr("Save config file successful!") + appTrans.emptyString
         anchors.right: parent.right
         anchors.rightMargin: 8
         anchors.bottom: parent.bottom

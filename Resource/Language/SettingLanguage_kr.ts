@@ -35,12 +35,12 @@
         <translation type="unfinished">시간</translation>
     </message>
     <message>
-        <location filename="../Qml/HeaderLog.qml" line="57"/>
+        <location filename="../Qml/HeaderLog.qml" line="58"/>
         <source>Dir</source>
         <translation type="unfinished">Dir</translation>
     </message>
     <message>
-        <location filename="../Qml/HeaderLog.qml" line="80"/>
+        <location filename="../Qml/HeaderLog.qml" line="82"/>
         <source>Content</source>
         <translation type="unfinished">콘텐츠</translation>
     </message>
@@ -48,50 +48,78 @@
 <context>
     <name>LPCommandScreen</name>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="12"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="16"/>
         <source>Setting default command for Load Port:</source>
         <translation type="unfinished">로드 포트에 대한 기본 명령 설정:</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="28"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="32"/>
         <source>Default for response message</source>
         <translation type="unfinished">응답 메시지의 기본값</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="81"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="85"/>
         <source>Default for terminate message</source>
         <translation type="unfinished">종료 메시지의 기본값</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="91"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="95"/>
         <source>Setting Load Port Version</source>
         <translation type="unfinished">로드 포트 버전 설정</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="120"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="124"/>
         <source>Setting Load Port State</source>
         <translation type="unfinished">로드 포트 상태 설정</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="130"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="134"/>
         <source>Setting Load Port Slot Information</source>
         <translation type="unfinished">로드 포트 슬롯 정보 설정</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="189"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="168"/>
+        <source>Set status for all slots</source>
+        <translation type="unfinished">모든 슬롯의 상태 설정</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="179"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="221"/>
+        <source>Set</source>
+        <translation type="unfinished">환경</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="201"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="264"/>
+        <source>Status:</source>
+        <translation type="unfinished">상태:</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="212"/>
+        <source>Set status for each slot</source>
+        <translation type="unfinished">슬롯별 상태 설정</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="254"/>
+        <source>Slot No:</source>
+        <translation type="unfinished">슬롯 번호:</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="276"/>
+        <source>Send Load Port Event</source>
+        <translation type="unfinished">로드 포트 이벤트 보내기</translation>
+    </message>
+    <message>
         <source>Set all slot</source>
-        <translation type="unfinished">모든 슬롯 설정</translation>
+        <translation type="obsolete">모든 슬롯 설정</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="198"/>
-        <location filename="../Qml/LPCommandScreen.qml" line="256"/>
         <source>TBD</source>
-        <translation type="unfinished">TBD</translation>
+        <translation type="obsolete">TBD</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="236"/>
         <source>Set slot</source>
-        <translation type="unfinished">슬롯 설정</translation>
+        <translation type="obsolete">슬롯 설정</translation>
     </message>
 </context>
 <context>
@@ -135,6 +163,16 @@
         <source>Setting default command for RFID:</source>
         <translation type="unfinished">RFID에 대한 기본 명령 설정:</translation>
     </message>
+    <message>
+        <location filename="../Qml/RFIDCommandScreen.qml" line="27"/>
+        <source>Setting default response for Read RFID command</source>
+        <translation type="unfinished">RFID 읽기 명령에 대한 기본 응답 설정</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RFIDCommandScreen.qml" line="47"/>
+        <source>Read RFID Result:</source>
+        <translation type="unfinished">RFID 결과 읽기:</translation>
+    </message>
 </context>
 <context>
     <name>RobotCommandScreen</name>
@@ -142,6 +180,41 @@
         <location filename="../Qml/RobotCommandScreen.qml" line="12"/>
         <source>Setting default command for Robot:</source>
         <translation type="unfinished">로봇에 대한 기본 명령 설정:</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="28"/>
+        <source>Setting default for Response Message</source>
+        <translation type="unfinished">응답 메시지 기본값 설정</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="35"/>
+        <source>Response Status:</source>
+        <translation type="unfinished">응답 상태:</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="66"/>
+        <source>Response Code:</source>
+        <translation type="unfinished">응답 코드:</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="77"/>
+        <source>Setting default for End of Execution Message</source>
+        <translation type="unfinished">실행 종료 메시지의 기본값 설정</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="84"/>
+        <source>Terminate Status:</source>
+        <translation type="unfinished">종료 상태:</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="116"/>
+        <source>Error Code:</source>
+        <translation type="unfinished">에러 코드:</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="126"/>
+        <source>Execution Time:</source>
+        <translation type="unfinished">실행 시간:</translation>
     </message>
 </context>
 <context>
@@ -162,46 +235,46 @@
         <translation type="unfinished">로드 포트 통신 설정</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="65"/>
-        <location filename="../Qml/SettingScreen.qml" line="140"/>
+        <location filename="../Qml/SettingScreen.qml" line="66"/>
+        <location filename="../Qml/SettingScreen.qml" line="141"/>
         <source>Com No</source>
         <translation type="unfinished">COM 이름</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="74"/>
-        <location filename="../Qml/SettingScreen.qml" line="149"/>
+        <location filename="../Qml/SettingScreen.qml" line="75"/>
+        <location filename="../Qml/SettingScreen.qml" line="150"/>
         <source>BaudRate</source>
         <translation type="unfinished">전송 속도</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="83"/>
-        <location filename="../Qml/SettingScreen.qml" line="158"/>
+        <location filename="../Qml/SettingScreen.qml" line="84"/>
+        <location filename="../Qml/SettingScreen.qml" line="159"/>
         <source>Data Size</source>
         <translation type="unfinished">데이터 크기</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="92"/>
-        <location filename="../Qml/SettingScreen.qml" line="167"/>
+        <location filename="../Qml/SettingScreen.qml" line="93"/>
+        <location filename="../Qml/SettingScreen.qml" line="168"/>
         <source>Parity</source>
         <translation type="unfinished">동등</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="133"/>
+        <location filename="../Qml/SettingScreen.qml" line="134"/>
         <source>RFID Communication Setting</source>
         <translation type="unfinished">RFID 통신 설정</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="217"/>
+        <location filename="../Qml/SettingScreen.qml" line="219"/>
         <source>Language</source>
         <translation type="unfinished">언어</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="293"/>
+        <location filename="../Qml/SettingScreen.qml" line="295"/>
         <source>Save</source>
         <translation type="unfinished">구하다</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="312"/>
+        <location filename="../Qml/SettingScreen.qml" line="314"/>
         <source>Save config file successful!</source>
         <translation type="unfinished">구성 파일 저장 성공!</translation>
     </message>

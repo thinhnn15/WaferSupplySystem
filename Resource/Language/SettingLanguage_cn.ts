@@ -35,12 +35,12 @@
         <translation type="unfinished">时间</translation>
     </message>
     <message>
-        <location filename="../Qml/HeaderLog.qml" line="57"/>
+        <location filename="../Qml/HeaderLog.qml" line="58"/>
         <source>Dir</source>
         <translation type="unfinished">Dir</translation>
     </message>
     <message>
-        <location filename="../Qml/HeaderLog.qml" line="80"/>
+        <location filename="../Qml/HeaderLog.qml" line="82"/>
         <source>Content</source>
         <translation type="unfinished">内容</translation>
     </message>
@@ -48,50 +48,78 @@
 <context>
     <name>LPCommandScreen</name>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="12"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="16"/>
         <source>Setting default command for Load Port:</source>
         <translation type="unfinished">设置加载端口的默认命令</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="28"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="32"/>
         <source>Default for response message</source>
         <translation type="unfinished">响应消息的默认值</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="81"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="85"/>
         <source>Default for terminate message</source>
         <translation type="unfinished">终止消息的默认值</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="91"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="95"/>
         <source>Setting Load Port Version</source>
         <translation type="unfinished">设置加载端口版本</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="120"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="124"/>
         <source>Setting Load Port State</source>
         <translation type="unfinished">设置加载端口状态</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="130"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="134"/>
         <source>Setting Load Port Slot Information</source>
         <translation type="unfinished">设置加载端口槽信息</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="189"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="168"/>
+        <source>Set status for all slots</source>
+        <translation type="unfinished">为所有插槽设置状态</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="179"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="221"/>
+        <source>Set</source>
+        <translation type="unfinished">环境</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="201"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="264"/>
+        <source>Status:</source>
+        <translation type="unfinished">地位：</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="212"/>
+        <source>Set status for each slot</source>
+        <translation type="unfinished">为每个插槽设置状态</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="254"/>
+        <source>Slot No:</source>
+        <translation type="unfinished">插槽号</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="276"/>
+        <source>Send Load Port Event</source>
+        <translation type="unfinished">发送加载端口事件</translation>
+    </message>
+    <message>
         <source>Set all slot</source>
-        <translation type="unfinished">设置所有插槽</translation>
+        <translation type="obsolete">设置所有插槽</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="198"/>
-        <location filename="../Qml/LPCommandScreen.qml" line="256"/>
         <source>TBD</source>
-        <translation type="unfinished">TBD</translation>
+        <translation type="obsolete">TBD</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="236"/>
         <source>Set slot</source>
-        <translation type="unfinished">设置插槽</translation>
+        <translation type="obsolete">设置插槽</translation>
     </message>
 </context>
 <context>
@@ -135,6 +163,16 @@
         <source>Setting default command for RFID:</source>
         <translation type="unfinished">设置 RFID 的默认命令：</translation>
     </message>
+    <message>
+        <location filename="../Qml/RFIDCommandScreen.qml" line="27"/>
+        <source>Setting default response for Read RFID command</source>
+        <translation type="unfinished">设置读取 RFID 命令的默认响应</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RFIDCommandScreen.qml" line="47"/>
+        <source>Read RFID Result:</source>
+        <translation type="unfinished">读取 RFID 结果</translation>
+    </message>
 </context>
 <context>
     <name>RobotCommandScreen</name>
@@ -142,6 +180,41 @@
         <location filename="../Qml/RobotCommandScreen.qml" line="12"/>
         <source>Setting default command for Robot:</source>
         <translation type="unfinished">为机器人设置默认命令：</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="28"/>
+        <source>Setting default for Response Message</source>
+        <translation type="unfinished">设置响应消息的默认值</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="35"/>
+        <source>Response Status:</source>
+        <translation type="unfinished">响应状态：</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="66"/>
+        <source>Response Code:</source>
+        <translation type="unfinished">响应代码：</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="77"/>
+        <source>Setting default for End of Execution Message</source>
+        <translation type="unfinished">为执行结束消息设置默认值</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="84"/>
+        <source>Terminate Status:</source>
+        <translation type="unfinished">终止状态：</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="116"/>
+        <source>Error Code:</source>
+        <translation type="unfinished">错误代码：</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="126"/>
+        <source>Execution Time:</source>
+        <translation type="unfinished">执行时间处理时间：</translation>
     </message>
 </context>
 <context>
@@ -162,46 +235,46 @@
         <translation type="unfinished">装载端口通讯设置</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="65"/>
-        <location filename="../Qml/SettingScreen.qml" line="140"/>
+        <location filename="../Qml/SettingScreen.qml" line="66"/>
+        <location filename="../Qml/SettingScreen.qml" line="141"/>
         <source>Com No</source>
         <translation type="unfinished">通讯名称</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="74"/>
-        <location filename="../Qml/SettingScreen.qml" line="149"/>
+        <location filename="../Qml/SettingScreen.qml" line="75"/>
+        <location filename="../Qml/SettingScreen.qml" line="150"/>
         <source>BaudRate</source>
         <translation type="unfinished">波特率</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="83"/>
-        <location filename="../Qml/SettingScreen.qml" line="158"/>
+        <location filename="../Qml/SettingScreen.qml" line="84"/>
+        <location filename="../Qml/SettingScreen.qml" line="159"/>
         <source>Data Size</source>
         <translation type="unfinished">数据大小</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="92"/>
-        <location filename="../Qml/SettingScreen.qml" line="167"/>
+        <location filename="../Qml/SettingScreen.qml" line="93"/>
+        <location filename="../Qml/SettingScreen.qml" line="168"/>
         <source>Parity</source>
         <translation type="unfinished">平价</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="133"/>
+        <location filename="../Qml/SettingScreen.qml" line="134"/>
         <source>RFID Communication Setting</source>
         <translation type="unfinished">RFID通讯设置</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="217"/>
+        <location filename="../Qml/SettingScreen.qml" line="219"/>
         <source>Language</source>
         <translation type="unfinished">语</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="293"/>
+        <location filename="../Qml/SettingScreen.qml" line="295"/>
         <source>Save</source>
         <translation type="unfinished">保存</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="312"/>
+        <location filename="../Qml/SettingScreen.qml" line="314"/>
         <source>Save config file successful!</source>
         <translation type="unfinished">保存配置文件成功！</translation>
     </message>

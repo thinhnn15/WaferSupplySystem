@@ -37,7 +37,8 @@ Item {
             anchors.left: parent.left
             anchors.leftMargin: 8
             anchors.verticalCenter: parent.verticalCenter
-            font.pixelSize: 12
+            font.pixelSize: 14
+            font.bold: true
         }
     }
 
@@ -58,7 +59,8 @@ Item {
             anchors.leftMargin: 8
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
-            font.pixelSize: 12
+            font.pixelSize: 14
+            font.bold: true
         }
         border.color: "#909090"
     }
@@ -81,7 +83,8 @@ Item {
             anchors.leftMargin: 8
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
-            font.pixelSize: 12
+            font.pixelSize: 14
+            font.bold: true
         }
         border.color: "#909090"
     }

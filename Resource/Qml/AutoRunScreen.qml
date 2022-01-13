@@ -82,6 +82,7 @@ Rectangle {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
                         anchors.leftMargin: 3
+                        font.pixelSize: 13
                     }
                 }
                 Rectangle {
@@ -99,6 +100,7 @@ Rectangle {
                         anchors.left: parent.left
                         anchors.leftMargin: 3
                         color: colorlog
+                        font.pixelSize: 13
                     }
                 }
                 Rectangle {
@@ -116,6 +118,7 @@ Rectangle {
                         anchors.left: parent.left
                         anchors.leftMargin: 3
                         color: colorlog
+                        font.pixelSize: 13
                     }
                 }
                 Rectangle {
@@ -133,6 +136,7 @@ Rectangle {
                         anchors.left: parent.left
                         anchors.leftMargin: 3
                         color: colorlog
+                        font.pixelSize: 13
                     }
                 }
             }

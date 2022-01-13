@@ -36,6 +36,17 @@ static const QMap<QString, int> mapComName = {
     { "COM7", ENUMS::COM7},
     { "COM8", ENUMS::COM8},
     { "COM9", ENUMS::COM9},
+    { "COM10", ENUMS::COM10},
+    { "COM11", ENUMS::COM11},
+    { "COM12", ENUMS::COM12},
+    { "COM13", ENUMS::COM13},
+    { "COM14", ENUMS::COM14},
+    { "COM15", ENUMS::COM15},
+    { "COM16", ENUMS::COM16},
+    { "COM17", ENUMS::COM17},
+    { "COM18", ENUMS::COM18},
+    { "COM19", ENUMS::COM19},
+    { "COM20", ENUMS::COM20},
 };
 
 static const QMap<int, QString> reverse_mapComName = {
@@ -48,6 +59,17 @@ static const QMap<int, QString> reverse_mapComName = {
     {ENUMS::COM7, "COM7"},
     {ENUMS::COM8, "COM8"},
     {ENUMS::COM9, "COM9"},
+    {ENUMS::COM10, "COM10"},
+    {ENUMS::COM11, "COM11"},
+    {ENUMS::COM12, "COM12"},
+    {ENUMS::COM13, "COM13"},
+    {ENUMS::COM14, "COM14"},
+    {ENUMS::COM15, "COM15"},
+    {ENUMS::COM16, "COM16"},
+    {ENUMS::COM17, "COM17"},
+    {ENUMS::COM18, "COM18"},
+    {ENUMS::COM19, "COM19"},
+    {ENUMS::COM20, "COM20"}
 };
 
 

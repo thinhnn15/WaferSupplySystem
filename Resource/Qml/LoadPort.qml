@@ -54,7 +54,7 @@ Item {
             text: qsTr("LP") + appTrans.emptyString
             anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
-            font.pixelSize: 12
+            font.pixelSize: 14
         }
     }
 }

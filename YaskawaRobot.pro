@@ -4,13 +4,12 @@ QT += serialport
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+RC_ICONS = Resource/Images/Wf.ico
 
 SOURCES += \
     Source/Common/LanConnection.cpp \
     Source/Common/SerialConnection.cpp \
-    Source/Global.cpp \
     Source/LoadPortModule/LoadPortComm.cpp \
-    Source/Model/ListSlot.cpp \
     Source/RFIDModule/RFIDComm.cpp \
     Source/RobotModule/RobotComm.cpp \
     Source/main.cpp \
@@ -23,12 +22,15 @@ SOURCES += \
     Source/WaferSupplySystem.cpp \
     Source/LoadPortModule/LoadPortController.cpp \
     Source/RFIDModule/RFIDController.cpp \
-    Source/Model/SettingData.cpp
+    Source/Model/SettingData.cpp \
+    Source/Global.cpp \
+    Source/Model/ListSlot.cpp
 
 RESOURCES += \
     Resource/Qml/qml.qrc \
     Resource/Language/language.qrc \
-    Resource/font.qrc
+    Resource/font.qrc \
+    Resource/images.qrc
 
 
 TRANSLATIONS = Resource/Language/SettingLanguage_en.ts \
@@ -52,10 +54,8 @@ HEADERS += \
     Source/Common/LanConnection.h \
     Source/Common/SerialConnection.h \
     Source/DefConstant.h \
-    Source/Global.h \
     Source/LoadPortModule/LoadPortComm.h \
     Source/Model/AlignerInfo.h \
-    Source/Model/ListSlot.h \
     Source/Model/LoadPortInfo.h \
     Source/Model/LogModel.h \
     Source/Model/RobotArmInfo.h \
@@ -69,7 +69,9 @@ HEADERS += \
     Source/RFIDModule/RFIDController.h \
     Source/Model/SettingData.h \
     Source/enums.h \
-    Source/AppTranslator.h
+    Source/AppTranslator.h \
+    Source/Global.h \
+    Source/Model/ListSlot.h
 
 DISTFILES += \
     Source/Note.txt

@@ -15,7 +15,7 @@ Rectangle {
         text: nameButton
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-        font.pixelSize: 15
+        font.pixelSize: 14
     }
     Rectangle{
         id: subRec

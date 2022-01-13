@@ -50,7 +50,7 @@ Item {
             text: qsTr("Aligner") + appTrans.emptyString
             anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
-            font.pixelSize: 12
+            font.pixelSize: 14
         }
     }
     state: "HASWAFER"

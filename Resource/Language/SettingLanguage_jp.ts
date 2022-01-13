@@ -35,12 +35,12 @@
         <translation type="unfinished">時間</translation>
     </message>
     <message>
-        <location filename="../Qml/HeaderLog.qml" line="57"/>
+        <location filename="../Qml/HeaderLog.qml" line="58"/>
         <source>Dir</source>
         <translation type="unfinished">Dir</translation>
     </message>
     <message>
-        <location filename="../Qml/HeaderLog.qml" line="80"/>
+        <location filename="../Qml/HeaderLog.qml" line="82"/>
         <source>Content</source>
         <translation type="unfinished">コンテンツ</translation>
     </message>
@@ -48,50 +48,78 @@
 <context>
     <name>LPCommandScreen</name>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="12"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="16"/>
         <source>Setting default command for Load Port:</source>
         <translation type="unfinished">ロードポートのデフォルトコマンドの設定：</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="28"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="32"/>
         <source>Default for response message</source>
         <translation type="unfinished">応答メッセージのデフォルト</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="81"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="85"/>
         <source>Default for terminate message</source>
         <translation type="unfinished">終了メッセージのデフォルト</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="91"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="95"/>
         <source>Setting Load Port Version</source>
         <translation type="unfinished">ロードポートバージョンの設定</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="120"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="124"/>
         <source>Setting Load Port State</source>
         <translation type="unfinished">ロードポート状態の設定</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="130"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="134"/>
         <source>Setting Load Port Slot Information</source>
         <translation type="unfinished">ロードポートスロット情報の設定</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="189"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="168"/>
+        <source>Set status for all slots</source>
+        <translation type="unfinished">すべてのスロットのステータスを設定する</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="179"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="221"/>
+        <source>Set</source>
+        <translation type="unfinished">設定</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="201"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="264"/>
+        <source>Status:</source>
+        <translation type="unfinished">状態：</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="212"/>
+        <source>Set status for each slot</source>
+        <translation type="unfinished">各スロットのステータスを設定する</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="254"/>
+        <source>Slot No:</source>
+        <translation type="unfinished">スロット番号：</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="276"/>
+        <source>Send Load Port Event</source>
+        <translation type="unfinished">ロードポートイベントの送信</translation>
+    </message>
+    <message>
         <source>Set all slot</source>
-        <translation type="unfinished">Set all slot</translation>
+        <translation type="obsolete">Set all slot</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="198"/>
-        <location filename="../Qml/LPCommandScreen.qml" line="256"/>
         <source>TBD</source>
-        <translation type="unfinished">TBD</translation>
+        <translation type="obsolete">TBD</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="236"/>
         <source>Set slot</source>
-        <translation type="unfinished">Set slot</translation>
+        <translation type="obsolete">Set slot</translation>
     </message>
 </context>
 <context>
@@ -135,6 +163,16 @@
         <source>Setting default command for RFID:</source>
         <translation type="unfinished">RFIDのデフォルトコマンドの設定：</translation>
     </message>
+    <message>
+        <location filename="../Qml/RFIDCommandScreen.qml" line="27"/>
+        <source>Setting default response for Read RFID command</source>
+        <translation type="unfinished">読み取りRFIDコマンドのデフォルト応答の設定</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RFIDCommandScreen.qml" line="47"/>
+        <source>Read RFID Result:</source>
+        <translation type="unfinished">RFIDの結果を読む：</translation>
+    </message>
 </context>
 <context>
     <name>RobotCommandScreen</name>
@@ -142,6 +180,41 @@
         <location filename="../Qml/RobotCommandScreen.qml" line="12"/>
         <source>Setting default command for Robot:</source>
         <translation type="unfinished">ロボットのデフォルトコマンドの設定：</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="28"/>
+        <source>Setting default for Response Message</source>
+        <translation type="unfinished">応答メッセージのデフォルトの設定</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="35"/>
+        <source>Response Status:</source>
+        <translation type="unfinished">応答ステータス：</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="66"/>
+        <source>Response Code:</source>
+        <translation type="unfinished">応答コード：</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="77"/>
+        <source>Setting default for End of Execution Message</source>
+        <translation type="unfinished">実行終了メッセージのデフォルト設定</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="84"/>
+        <source>Terminate Status:</source>
+        <translation type="unfinished">ステータスの終了：</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="116"/>
+        <source>Error Code:</source>
+        <translation type="unfinished">エラーコード：</translation>
+    </message>
+    <message>
+        <location filename="../Qml/RobotCommandScreen.qml" line="126"/>
+        <source>Execution Time:</source>
+        <translation type="unfinished">実行時間：</translation>
     </message>
 </context>
 <context>
@@ -162,46 +235,46 @@
         <translation type="unfinished">ロードポート通信設定</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="65"/>
-        <location filename="../Qml/SettingScreen.qml" line="140"/>
+        <location filename="../Qml/SettingScreen.qml" line="66"/>
+        <location filename="../Qml/SettingScreen.qml" line="141"/>
         <source>Com No</source>
         <translation type="unfinished">コムネーム</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="74"/>
-        <location filename="../Qml/SettingScreen.qml" line="149"/>
+        <location filename="../Qml/SettingScreen.qml" line="75"/>
+        <location filename="../Qml/SettingScreen.qml" line="150"/>
         <source>BaudRate</source>
         <translation type="unfinished">ボーレート</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="83"/>
-        <location filename="../Qml/SettingScreen.qml" line="158"/>
+        <location filename="../Qml/SettingScreen.qml" line="84"/>
+        <location filename="../Qml/SettingScreen.qml" line="159"/>
         <source>Data Size</source>
         <translation type="unfinished">データサイズ</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="92"/>
-        <location filename="../Qml/SettingScreen.qml" line="167"/>
+        <location filename="../Qml/SettingScreen.qml" line="93"/>
+        <location filename="../Qml/SettingScreen.qml" line="168"/>
         <source>Parity</source>
         <translation type="unfinished">パリティ</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="133"/>
+        <location filename="../Qml/SettingScreen.qml" line="134"/>
         <source>RFID Communication Setting</source>
         <translation type="unfinished">RFID通信設定</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="217"/>
+        <location filename="../Qml/SettingScreen.qml" line="219"/>
         <source>Language</source>
         <translation type="unfinished">言語</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="293"/>
+        <location filename="../Qml/SettingScreen.qml" line="295"/>
         <source>Save</source>
         <translation type="unfinished">保存する</translation>
     </message>
     <message>
-        <location filename="../Qml/SettingScreen.qml" line="312"/>
+        <location filename="../Qml/SettingScreen.qml" line="314"/>
         <source>Save config file successful!</source>
         <translation type="unfinished">設定ファイルの保存に成功しました！</translation>
     </message>
