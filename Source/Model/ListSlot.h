@@ -31,7 +31,7 @@ public:
     QVariant data(const QModelIndex& index, int role=Qt::DisplayRole) const override;
     QVariant datafromIndex(const int& index, int role) const;
     void addSlot(const CSlotInfo& slotInfo);
-    void changeSlotInfo(int slotNo, int status);
+    Q_INVOKABLE void changeSlotInfo(int slotNo, int status);
     int getSlotSts(int slotNo) const;
 private:
     QList<CSlotInfo> m_slots;

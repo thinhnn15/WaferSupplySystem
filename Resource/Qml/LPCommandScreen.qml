@@ -142,7 +142,7 @@ Rectangle {
             anchors.left: parent.left
             anchors.leftMargin: 8
             model: listSlot
-            enabled: false
+            interactive: false
             verticalLayoutDirection: ListView.BottomToTop
             spacing: 1
             delegate: Rectangle {
@@ -155,6 +155,14 @@ Rectangle {
                     anchors.centerIn: parent
                     color: "white"
                     font.pixelSize: 12
+                }
+                MouseArea {
+                    anchors.fill: parent
+                    onPressAndHold: {
+                        var requestChangeSts = Enum.SLOT_NO_WAFER;
+                        requestChangeSts = (status === Enum.SLOT_HAS_WAFER) ? Enum.SLOT_NO_WAFER : Enum.SLOT_HAS_WAFER;
+                        listSlot.changeSlotInfo(index, requestChangeSts);
+                    }
                 }
             }
         }

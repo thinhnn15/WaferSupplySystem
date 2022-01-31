@@ -25,5 +25,6 @@
         <file>RobotCommandScreen.qml</file>
         <file>RFIDCommandScreen.qml</file>
         <file>Common/RadioButtonVerCustom.qml</file>
+        <file>../Images/WaferIcon.ico</file>
     </qresource>
 </RCC>

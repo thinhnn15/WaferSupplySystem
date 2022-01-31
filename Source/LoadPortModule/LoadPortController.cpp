@@ -46,7 +46,6 @@ void CLoadPortController::OnHandleReceiveMsg()
         QByteArray msg = m_queueReceiveMsg.front();
         m_queueReceiveMsg.pop_front();
         // Handle the receive message
-        // emit the signal to the Manipulator thread
         emit parserCommand(msg);
     }
 }
