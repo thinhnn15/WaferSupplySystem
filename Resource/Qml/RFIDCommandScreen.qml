@@ -29,8 +29,8 @@ Rectangle {
 
         TextEdit {
             id: txtRFIDResult
-            x: 125
-            y: 35
+            x: 142
+            y: 36
             width: 101
             height: 26
             isReadOnly: true

@@ -286,7 +286,7 @@ Rectangle {
     Button1State{
         id: btnSaveSetting
         x: 480
-        y: 306
+        y: 390
         width: 80
         height: 31
         color: "#009dff"
@@ -335,6 +335,34 @@ Rectangle {
             properties: "opacity"
             from: 1.0; to: 0.0
             easing.type: Easing.OutExpo; duration: 1000
+        }
+    }
+
+    GroupBoxCustom {
+        id: grYaskawaAligner
+        x: 313
+        y: 298
+        width: 247
+        height: 72
+        groupName: qsTr("Use Yaskawa's Aligner:") + appTrans.emptyString
+        RadioButtonCustom {
+            id: radioUseYaskawaAligner
+            x: 8
+            y: 44
+            width: 20
+            height: 20
+            isActive: true
+            nameRadio: "Use"
+        }
+
+        RadioButtonCustom {
+            id: radioNoUseYaskawaAligner
+            x: 40
+            y: 44
+            width: 20
+            height: 20
+            isActive: checkLanguage(Enum.JP)
+            nameRadio: "No"
         }
     }
 
