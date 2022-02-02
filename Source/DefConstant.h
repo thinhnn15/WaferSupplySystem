@@ -25,6 +25,8 @@
 #define STR_INI_RFID_PARITY     "RFID Parity"
 #define STR_INI_LP_RES_MODE     "Load Port Response Mode (0: ACK, 1: NAK)"
 #define STR_INI_LP_TER_MODE     "Load Port Terminate Mode (0: INF, 1: ABS)"
+#define STR_INI_EFEM_TYPE       "EFEM Type(0: Top, 1: Bottom)"
+#define STR_INI_ALIGNER_TYPE    "Aligner Type(0: Yaskawa Aligner, 1: Other)"
 
 static const QMap<QString, int> mapComName = {
     { "COM1", ENUMS::COM1},

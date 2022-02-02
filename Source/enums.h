@@ -15,6 +15,8 @@ class ENUMS : public QObject
     Q_ENUMS(E_LP_RES_TYPE)
     Q_ENUMS(E_LP_TER_TYPE)
     Q_ENUMS(E_SLOT_STS)
+    Q_ENUMS(E_ALIGNER_TYPE)
+    Q_ENUMS(E_EFEM_TYPE)
 public:
     enum E_LANGUAGE
     {
@@ -86,6 +88,16 @@ public:
         LP_TER_INF = 0,
         LP_TER_ABS = 1,
         LP_TER_MAX,
+    };
+    enum E_ALIGNER_TYPE
+    {
+        ALIGNER_YASKAWA,
+        ALIGNER_SM,
+    };
+    enum E_EFEM_TYPE
+    {
+        TOP_TYPE,
+        BOTTOM_TYPE,
     };
 };
 //Q_DECLARE_METATYPE(ENUMS::E_LANGUAGE)

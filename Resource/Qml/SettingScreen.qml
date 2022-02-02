@@ -344,26 +344,66 @@ Rectangle {
         y: 298
         width: 247
         height: 72
-        groupName: qsTr("Use Yaskawa's Aligner:") + appTrans.emptyString
+        groupName: qsTr("Use Yaskawa Aligner:") + appTrans.emptyString
         RadioButtonCustom {
             id: radioUseYaskawaAligner
             x: 8
             y: 44
             width: 20
             height: 20
-            isActive: true
-            nameRadio: "Use"
+            isActive: checkAlignerType(Enum.ALIGNER_YASKAWA)
+            nameRadio: qsTr("Use") + appTrans.emptyString
+            onChangeStatus: {
+                changeAlignerType(Enum.ALIGNER_YASKAWA);
+            }
         }
 
         RadioButtonCustom {
             id: radioNoUseYaskawaAligner
-            x: 40
+            x: 41
             y: 44
             width: 20
             height: 20
-            isActive: checkLanguage(Enum.JP)
-            nameRadio: "No"
+            isActive: checkAlignerType(Enum.ALIGNER_SM)
+            nameRadio: qsTr("No") + appTrans.emptyString
+            onChangeStatus: {
+                changeAlignerType(Enum.ALIGNER_SM);
+            }
         }
+    }
+
+    GroupBoxCustom {
+        id: grSupplyTopOrBot
+        x: 14
+        y: 298
+        width: 247
+        height: 72
+        RadioButtonCustom {
+            id: radioEFEMTop
+            x: 8
+            y: 44
+            width: 20
+            height: 20
+            nameRadio: qsTr("Top") + appTrans.emptyString
+            isActive: checkEFEMType(Enum.TOP_TYPE)
+            onChangeStatus: {
+                changeEfemType(Enum.TOP_TYPE);
+            }
+        }
+
+        RadioButtonCustom {
+            id: radioEFEMBottom
+            x: 41
+            y: 44
+            width: 20
+            height: 20
+            isActive: checkEFEMType(Enum.BOTTOM_TYPE)
+            nameRadio: qsTr("Bottom") + appTrans.emptyString
+            onChangeStatus: {
+                changeEfemType(Enum.BOTTOM_TYPE);
+            }
+        }
+        groupName: qsTr("Wafer Supply for:") + appTrans.emptyString
     }
 
     function changeLanguage(num){
@@ -398,9 +438,58 @@ Rectangle {
         saveSettingData();
     }
 
+    function changeAlignerType(type){
+        radioUseYaskawaAligner.isActive = false;
+        radioNoUseYaskawaAligner.isActive = false;
+        switch(type){
+        case Enum.ALIGNER_YASKAWA:
+            radioUseYaskawaAligner.isActive = true;
+            break;
+        case Enum.ALIGNER_SM:
+            radioNoUseYaskawaAligner.isActive = true;
+            break;
+        default:
+            radioUseYaskawaAligner.isActive = true;
+            break;
+        }
+        settingData.setAlignerType(type)
+        saveSettingData();
+    }
+
+    function changeEfemType(type){
+        radioEFEMTop.isActive = false;
+        radioEFEMBottom.isActive = false;
+        switch(type){
+        case Enum.TOP_TYPE:
+            radioEFEMTop.isActive = true;
+            break;
+        case Enum.BOTTOM_TYPE:
+            radioEFEMBottom.isActive = true;
+            break;
+        default:
+            radioEFEMTop.isActive = true;
+            break;
+        }
+        settingData.setEfemType(type)
+        saveSettingData();
+    }
     function checkLanguage(lang){
         var currentLang = settingData.language
         if(lang === currentLang)
+            return true
+        else
+            return false
+    }
+    function checkAlignerType(type){
+        var currentAlignerType = settingData.alignerType
+        if(type === currentAlignerType)
+            return true
+        else
+            return false
+    }
+    function checkEFEMType(type){
+        var currentEFEMType = settingData.efemType
+        if(type === currentEFEMType)
             return true
         else
             return false

@@ -18,6 +18,8 @@ class CSettingData : public QObject
     Q_PROPERTY(int language READ language WRITE setLanguage NOTIFY languageChanged)
     Q_PROPERTY(int lpResponseMode READ lpResponseMode WRITE setLpResponseMode NOTIFY lpResponseModeChanged)
     Q_PROPERTY(int lpTerminateMode READ lpTerminateMode WRITE setLpTerminateMode NOTIFY lpTerminateModeChanged)
+    Q_PROPERTY(int efemType READ efemType WRITE setEfemType NOTIFY efemTypeChanged)
+    Q_PROPERTY(int alignerType READ alignerType WRITE setAlignerType NOTIFY alignerTypeChanged)
 
 private:
     int m_lanPortNo;
@@ -33,6 +35,10 @@ private:
     int m_lpResponseMode;
 
     int m_lpTerminateMode;
+
+    int m_efemType;
+
+    int m_alignerType;
 
 public:
     CSettingData(QObject* parent = 0);
@@ -93,6 +99,16 @@ public:
     int lpTerminateMode() const
     {
         return m_lpTerminateMode;
+    }
+
+    int efemType() const
+    {
+        return m_efemType;
+    }
+
+    int alignerType() const
+    {
+        return m_alignerType;
     }
 
 public slots:
@@ -203,6 +219,24 @@ public slots:
         emit lpTerminateModeChanged(m_lpTerminateMode);
     }
 
+    void setEfemType(int efemType)
+    {
+        if (m_efemType == efemType)
+            return;
+
+        m_efemType = efemType;
+        emit efemTypeChanged(m_efemType);
+    }
+
+    void setAlignerType(int alignerType)
+    {
+        if (m_alignerType == alignerType)
+            return;
+
+        m_alignerType = alignerType;
+        emit alignerTypeChanged(m_alignerType);
+    }
+
 signals:
     void lanPortNoChanged(int lanPortNo);
     void lpComNameChanged(int lpComName);
@@ -216,6 +250,8 @@ signals:
     void languageChanged(int language);
     void lpResponseModeChanged(int lpResponseMode);
     void lpTerminateModeChanged(int lpTerminateMode);
+    void efemTypeChanged(int efemType);
+    void alignerTypeChanged(int alignerType);
 };
 
 #endif // SETTINGDATA_H

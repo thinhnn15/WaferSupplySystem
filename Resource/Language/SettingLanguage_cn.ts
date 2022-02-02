@@ -68,44 +68,49 @@
         <translation type="unfinished">设置加载端口版本</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="124"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="135"/>
+        <source>Change</source>
+        <translation type="unfinished">改变</translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="141"/>
         <source>Setting Load Port State</source>
         <translation type="unfinished">设置加载端口状态</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="134"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="151"/>
         <source>Setting Load Port Slot Information</source>
         <translation type="unfinished">设置加载端口槽信息</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="168"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="194"/>
         <source>Set status for all slots</source>
         <translation type="unfinished">为所有插槽设置状态</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="179"/>
-        <location filename="../Qml/LPCommandScreen.qml" line="221"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="205"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="247"/>
         <source>Set</source>
         <translation type="unfinished">环境</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="201"/>
-        <location filename="../Qml/LPCommandScreen.qml" line="264"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="227"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="290"/>
         <source>Status:</source>
         <translation type="unfinished">地位：</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="212"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="238"/>
         <source>Set status for each slot</source>
         <translation type="unfinished">为每个插槽设置状态</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="254"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="280"/>
         <source>Slot No:</source>
         <translation type="unfinished">插槽号</translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="276"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="302"/>
         <source>Send Load Port Event</source>
         <translation type="unfinished">发送加载端口事件</translation>
     </message>
@@ -277,6 +282,36 @@
         <location filename="../Qml/SettingScreen.qml" line="314"/>
         <source>Save config file successful!</source>
         <translation type="unfinished">保存配置文件成功！</translation>
+    </message>
+    <message>
+        <location filename="../Qml/SettingScreen.qml" line="347"/>
+        <source>Use Yaskawa Aligner:</source>
+        <translation type="unfinished">使用安川矫正器:</translation>
+    </message>
+    <message>
+        <location filename="../Qml/SettingScreen.qml" line="355"/>
+        <source>Use</source>
+        <translation type="unfinished">是的</translation>
+    </message>
+    <message>
+        <location filename="../Qml/SettingScreen.qml" line="365"/>
+        <source>No</source>
+        <translation type="unfinished">不</translation>
+    </message>
+    <message>
+        <location filename="../Qml/SettingScreen.qml" line="381"/>
+        <source>Top</source>
+        <translation type="unfinished">最佳</translation>
+    </message>
+    <message>
+        <location filename="../Qml/SettingScreen.qml" line="392"/>
+        <source>Bottom</source>
+        <translation type="unfinished">底部</translation>
+    </message>
+    <message>
+        <location filename="../Qml/SettingScreen.qml" line="394"/>
+        <source>Wafer Supply for:</source>
+        <translation type="unfinished">晶圆供应：</translation>
     </message>
 </context>
 <context>

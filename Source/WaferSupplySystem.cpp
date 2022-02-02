@@ -217,6 +217,16 @@ void CWaferSupplySystem::ReadConfigFile()
         if(lpTerminateMode == ENUMS::LP_TER_INF || lpTerminateMode == ENUMS::LP_TER_ABS){
             m_settingData.setLpTerminateMode(lpTerminateMode);
         }
+        // Get value for EFEM Type (0: Top, 1: Bottom)
+        int efemType = settings.value(STR_INI_EFEM_TYPE, 0).toInt();
+        if(efemType == ENUMS::TOP_TYPE || efemType == ENUMS::BOTTOM_TYPE){
+            m_settingData.setEfemType(efemType);
+        }
+        // Get value for Load Port Response mode (ACK or NAK)
+        int alignerType = settings.value(STR_INI_ALIGNER_TYPE, 0).toInt();
+        if(alignerType == ENUMS::ALIGNER_YASKAWA || alignerType == ENUMS::ALIGNER_SM){
+            m_settingData.setAlignerType(alignerType);
+        }
         settings.endGroup();
     }
 }
@@ -242,6 +252,8 @@ void CWaferSupplySystem::SaveConfigFile()
         settings.setValue(STR_INI_RFID_PARITY,          reverse_mapParity[m_settingData.rfidParity()]);
         settings.setValue(STR_INI_LP_RES_MODE,          m_settingData.lpResponseMode());
         settings.setValue(STR_INI_LP_TER_MODE,          m_settingData.lpTerminateMode());
+        settings.setValue(STR_INI_EFEM_TYPE,            m_settingData.efemType());
+        settings.setValue(STR_INI_ALIGNER_TYPE,         m_settingData.alignerType());
         settings.endGroup();
     }
 }

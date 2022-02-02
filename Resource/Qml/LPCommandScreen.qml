@@ -13,7 +13,7 @@ Rectangle {
     signal setSlotStatus(int slotNo, int status)
     Text {
         id: txtLPCommandScreen
-        text: qsTr("Setting default command for Load Port:") + appTrans.emptyString
+        text: qsTr("Setting default command for Load Port:")
         font.bold: true
         anchors.left: parent.left
         anchors.leftMargin: 14
@@ -29,7 +29,7 @@ Rectangle {
         width: 245
         height: 47
         textSize: 14
-        groupName: qsTr("Default for response message") + appTrans.emptyString
+        groupName: qsTr("Default for response message")
 
         RadioButtonVerCustom {
             id: radioResponseACK
@@ -82,23 +82,23 @@ Rectangle {
                 changeLPTerminateType(Enum.LP_TER_ABS);
             }
         }
-        groupName: qsTr("Default for terminate message") + appTrans.emptyString
+        groupName: qsTr("Default for terminate message")
     }
 
     GroupBoxCustom {
         id: grLPVersion
         x: 14
-        y: 95
+        y: 82
         width: 245
-        height: 57
+        height: 88
         textSize: 14
-        groupName: qsTr("Setting Load Port Version") + appTrans.emptyString
+        groupName: qsTr("Setting Load Port Version")
 
         TextEdit {
             id: txtLPVersion
             x: 8
             y: 23
-            width: 146
+            width: 114
             height: 26
             content: "SDK_VER7-1-4"
             isReadOnly: true
@@ -108,20 +108,37 @@ Rectangle {
     GroupBoxCustom {
         id: grLPState
         x: 341
-        y: 95
+        y: 82
         width: 245
-        height: 57
+        height: 88
         textSize: 14
         TextEdit {
             id: txtLPState
             x: 8
             y: 23
-            width: 229
+            width: 177
             height: 26
             isReadOnly: true
             content: "00000010000000011111"
         }
-        groupName: qsTr("Setting Load Port State") + appTrans.emptyString
+
+        Button1State {
+            id: btnChangeState
+            x: 104
+            y: 52
+            width: 80
+            height: 31
+            color: "#009dff"
+            radius: 3
+            anchors.right: txtLPState.right
+            anchors.rightMargin: 0
+            nameButton: qsTr("Change")
+            border.color: "#009dff"
+            onClick: {
+
+            }
+        }
+        groupName: qsTr("Setting Load Port State")
     }
 
     GroupBoxCustom {
@@ -131,7 +148,7 @@ Rectangle {
         width: 572
         height: 359
         textSize: 14
-        groupName: qsTr("Setting Load Port Slot Information") + appTrans.emptyString
+        groupName: qsTr("Setting Load Port Slot Information")
         ListView {
             id: listLPInformation
             y: 20
@@ -150,6 +167,7 @@ Rectangle {
                 height: listLPInformation.height / 30 - 1
                 color: (status === Enum.SLOT_HAS_WAFER) ? "green" : "gray"
                 border.color: "#707070"
+                radius: 5
                 Text {
                     text: index+1
                     anchors.centerIn: parent
@@ -173,7 +191,7 @@ Rectangle {
             y: 21
             width: 297
             height: 106
-            groupName: qsTr("Set status for all slots") + appTrans.emptyString
+            groupName: qsTr("Set status for all slots")
 
             Button1State {
                 id: btnAllSlotSet
@@ -184,7 +202,7 @@ Rectangle {
                 color: "#009dff"
                 radius: 3
                 border.color: "#009dff"
-                nameButton: qsTr("Set") + appTrans.emptyString
+                nameButton: qsTr("Set")
                 onClick: {
                     var status = cbAllSlotSetting.activeIndex;
                     setAllSlotStatus(status);
@@ -193,7 +211,7 @@ Rectangle {
 
             ComboBoxCustom {
                 id: cbAllSlotSetting
-                x: 96
+                x: 102
                 y: 29
                 width: 128
                 height: 27
@@ -214,10 +232,10 @@ Rectangle {
         GroupBoxCustom {
             id: recSettingAllSlot1
             x: 267
-            y: 147
+            y: 144
             width: 297
             height: 130
-            groupName: qsTr("Set status for each slot") + appTrans.emptyString
+            groupName: qsTr("Set status for each slot")
             Button1State {
                 id: btn1SlotSet
                 x: 8
@@ -226,7 +244,7 @@ Rectangle {
                 height: 31
                 color: "#009dff"
                 radius: 3
-                nameButton: qsTr("Set") + appTrans.emptyString
+                nameButton: qsTr("Set")
                 border.color: "#009dff"
                 onClick: {
                     var slotNo = cbSlotNo.activeIndex;
@@ -237,7 +255,7 @@ Rectangle {
 
             ComboBoxCustom {
                 id: cbSlotInfo
-                x: 100
+                x: 105
                 y: 61
                 width: 128
                 height: 27
@@ -246,7 +264,7 @@ Rectangle {
 
             ComboBoxCustom {
                 id: cbSlotNo
-                x: 100
+                x: 105
                 y: 27
                 width: 128
                 height: 27
@@ -259,7 +277,7 @@ Rectangle {
                 id: element1
                 x: 8
                 y: 33
-                text: qsTr("Slot No:") + appTrans.emptyString
+                text: qsTr("Slot No:")
                 font.pixelSize: 14
             }
 
@@ -269,7 +287,7 @@ Rectangle {
                 y: 67
                 width: 69
                 height: 15
-                text: qsTr("Status:") + appTrans.emptyString
+                text: qsTr("Status:")
                 font.pixelSize: 14
             }
         }
@@ -277,16 +295,16 @@ Rectangle {
         GroupBoxCustom {
             id: grLPEvent
             x: 267
-            y: 298
+            y: 289
             width: 297
-            height: 56
+            height: 62
             textSize: 14
-            groupName: qsTr("Send Load Port Event") + appTrans.emptyString
+            groupName: qsTr("Send Load Port Event")
 
             Button1State {
                 id: btnLPMansw
                 x: 8
-                y: 20
+                y: 25
                 width: 80
                 height: 31
                 color: "#009dff"

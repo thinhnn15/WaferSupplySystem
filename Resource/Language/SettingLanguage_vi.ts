@@ -68,44 +68,49 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="124"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="135"/>
+        <source>Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Qml/LPCommandScreen.qml" line="141"/>
         <source>Setting Load Port State</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="134"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="151"/>
         <source>Setting Load Port Slot Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="168"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="194"/>
         <source>Set status for all slots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="179"/>
-        <location filename="../Qml/LPCommandScreen.qml" line="221"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="205"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="247"/>
         <source>Set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="201"/>
-        <location filename="../Qml/LPCommandScreen.qml" line="264"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="227"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="290"/>
         <source>Status:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="212"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="238"/>
         <source>Set status for each slot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="254"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="280"/>
         <source>Slot No:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Qml/LPCommandScreen.qml" line="276"/>
+        <location filename="../Qml/LPCommandScreen.qml" line="302"/>
         <source>Send Load Port Event</source>
         <translation type="unfinished"></translation>
     </message>
@@ -264,6 +269,36 @@
     <message>
         <location filename="../Qml/SettingScreen.qml" line="314"/>
         <source>Save config file successful!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Qml/SettingScreen.qml" line="347"/>
+        <source>Use Yaskawa Aligner:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Qml/SettingScreen.qml" line="355"/>
+        <source>Use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Qml/SettingScreen.qml" line="365"/>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Qml/SettingScreen.qml" line="381"/>
+        <source>Top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Qml/SettingScreen.qml" line="392"/>
+        <source>Bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Qml/SettingScreen.qml" line="394"/>
+        <source>Wafer Supply for:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

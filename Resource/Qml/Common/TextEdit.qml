@@ -17,7 +17,7 @@ Rectangle {
     TextInput{
         id: textEdit
         clip: true
-        width: parent.width - 35
+        width: parent.width/* - 35*/
         height: parent.height
         anchors.top: parent.top
         anchors.topMargin: 3
