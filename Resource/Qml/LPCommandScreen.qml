@@ -26,7 +26,7 @@ Rectangle {
         id: grResponseType
         x: 14
         y: 29
-        width: 245
+        width: 218
         height: 47
         textSize: 14
         groupName: qsTr("Default for response message")
@@ -56,9 +56,9 @@ Rectangle {
 
     GroupBoxCustom {
         id: grTerminateType
-        x: 341
+        x: 268
         y: 29
-        width: 245
+        width: 227
         height: 47
         textSize: 14
         RadioButtonVerCustom {
@@ -89,7 +89,7 @@ Rectangle {
         id: grLPVersion
         x: 14
         y: 82
-        width: 245
+        width: 218
         height: 88
         textSize: 14
         groupName: qsTr("Setting Load Port Version")
@@ -107,9 +107,9 @@ Rectangle {
 
     GroupBoxCustom {
         id: grLPState
-        x: 341
+        x: 268
         y: 82
-        width: 245
+        width: 227
         height: 88
         textSize: 14
         TextEdit {
@@ -124,14 +124,14 @@ Rectangle {
 
         Button1State {
             id: btnChangeState
-            x: 104
-            y: 52
+            x: 8
+            y: 53
             width: 80
             height: 31
             color: "#009dff"
             radius: 3
             anchors.right: txtLPState.right
-            anchors.rightMargin: 0
+            anchors.rightMargin: 97
             nameButton: qsTr("Change")
             border.color: "#009dff"
             onClick: {
@@ -145,7 +145,7 @@ Rectangle {
         id: grLPSlotInfo
         x: 14
         y: 176
-        width: 572
+        width: 481
         height: 359
         textSize: 14
         groupName: qsTr("Setting Load Port Slot Information")
@@ -187,9 +187,9 @@ Rectangle {
 
         GroupBoxCustom {
             id: recSettingAllSlot
-            x: 267
+            x: 254
             y: 21
-            width: 297
+            width: 219
             height: 106
             groupName: qsTr("Set status for all slots")
 
@@ -211,7 +211,7 @@ Rectangle {
 
             ComboBoxCustom {
                 id: cbAllSlotSetting
-                x: 102
+                x: 80
                 y: 29
                 width: 128
                 height: 27
@@ -231,9 +231,9 @@ Rectangle {
 
         GroupBoxCustom {
             id: recSettingAllSlot1
-            x: 267
+            x: 254
             y: 144
-            width: 297
+            width: 219
             height: 130
             groupName: qsTr("Set status for each slot")
             Button1State {
@@ -255,7 +255,7 @@ Rectangle {
 
             ComboBoxCustom {
                 id: cbSlotInfo
-                x: 105
+                x: 85
                 y: 61
                 width: 128
                 height: 27
@@ -264,8 +264,8 @@ Rectangle {
 
             ComboBoxCustom {
                 id: cbSlotNo
-                x: 105
-                y: 27
+                x: 85
+                y: 28
                 width: 128
                 height: 27
                 models: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
@@ -294,9 +294,9 @@ Rectangle {
 
         GroupBoxCustom {
             id: grLPEvent
-            x: 267
+            x: 254
             y: 289
-            width: 297
+            width: 219
             height: 62
             textSize: 14
             groupName: qsTr("Send Load Port Event")

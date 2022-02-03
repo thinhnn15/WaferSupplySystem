@@ -107,7 +107,7 @@
     <message>
         <location filename="../Qml/LPCommandScreen.qml" line="280"/>
         <source>Slot No:</source>
-        <translation type="unfinished">插槽号</translation>
+        <translation type="unfinished">插槽号:</translation>
     </message>
     <message>
         <location filename="../Qml/LPCommandScreen.qml" line="302"/>

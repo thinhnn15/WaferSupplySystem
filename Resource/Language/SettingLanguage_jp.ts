@@ -85,7 +85,7 @@
     <message>
         <location filename="../Qml/LPCommandScreen.qml" line="194"/>
         <source>Set status for all slots</source>
-        <translation type="unfinished">すべてのスロットのステータスを設定する</translation>
+        <translation type="unfinished">すべてのスロット</translation>
     </message>
     <message>
         <location filename="../Qml/LPCommandScreen.qml" line="205"/>
@@ -102,12 +102,12 @@
     <message>
         <location filename="../Qml/LPCommandScreen.qml" line="238"/>
         <source>Set status for each slot</source>
-        <translation type="unfinished">各スロットのステータスを設定する</translation>
+        <translation type="unfinished">各スロット</translation>
     </message>
     <message>
         <location filename="../Qml/LPCommandScreen.qml" line="280"/>
         <source>Slot No:</source>
-        <translation type="unfinished">スロット番号：</translation>
+        <translation type="unfinished">スロット：</translation>
     </message>
     <message>
         <location filename="../Qml/LPCommandScreen.qml" line="302"/>

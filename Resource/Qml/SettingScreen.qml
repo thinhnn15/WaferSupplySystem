@@ -16,7 +16,7 @@ Rectangle {
         id: grRobotComm
         x: 14
         y: 21
-        width: 247
+        width: 228
         height: 72
         groupName: qsTr("Robot Communication Setting") + appTrans.emptyString
         CellText {
@@ -43,7 +43,7 @@ Rectangle {
         id: grLPComm
         x: 14
         y: 114
-        width: 247
+        width: 228
         height: 163
         groupName: qsTr("Load Port Communication Setting") + appTrans.emptyString
         ComboBoxCustom {
@@ -127,9 +127,9 @@ Rectangle {
 
     GroupBoxCustom {
         id: grRFIDComm
-        x: 313
-        y: 115
-        width: 247
+        x: 261
+        y: 114
+        width: 227
         height: 163
         groupName: qsTr("RFID Communication Setting") + appTrans.emptyString
         CellText {
@@ -212,9 +212,9 @@ Rectangle {
 
     GroupBoxCustom {
         id: grLangSetting
-        x: 313
+        x: 261
         y: 21
-        width: 247
+        width: 227
         height: 72
         groupName: qsTr("Language") + appTrans.emptyString
         RadioButtonCustom{
@@ -285,8 +285,8 @@ Rectangle {
 
     Button1State{
         id: btnSaveSetting
-        x: 480
-        y: 390
+        x: 408
+        y: 389
         width: 80
         height: 31
         color: "#009dff"
@@ -340,9 +340,9 @@ Rectangle {
 
     GroupBoxCustom {
         id: grYaskawaAligner
-        x: 313
+        x: 261
         y: 298
-        width: 247
+        width: 227
         height: 72
         groupName: qsTr("Use Yaskawa Aligner:") + appTrans.emptyString
         RadioButtonCustom {
@@ -376,7 +376,7 @@ Rectangle {
         id: grSupplyTopOrBot
         x: 14
         y: 298
-        width: 247
+        width: 228
         height: 72
         RadioButtonCustom {
             id: radioEFEMTop

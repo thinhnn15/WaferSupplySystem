@@ -1,4 +1,5 @@
 import QtQuick 2.4
+import Enum 1.3
 
 Rectangle {
     id: mainScreen
@@ -140,6 +141,31 @@ Rectangle {
                     }
                 }
             }
+        }
+    }
+
+    Rectangle {
+        id: rectangle
+        width: (settingData.efemType === Enum.BOTTOM_TYPE) ? 115: 85
+        height: 29
+        color: "#1c8008"
+        anchors.bottom: recLogArea.bottom
+        anchors.bottomMargin: 0
+        anchors.right: recLogArea.left
+        anchors.rightMargin: 2
+        Text {
+            id: txtSupplyType
+            x: 4
+            width: (settingData.efemType === Enum.BOTTOM_TYPE) ? 107 : 80
+            height: 19
+            color: "#ffffff"
+            text: (settingData.efemType === Enum.BOTTOM_TYPE) ? qsTr("Bottom Supply") :qsTr("Top Supply")
+            //            text: qsTr("Bottom Supply")
+            anchors.rightMargin: 4
+            anchors.verticalCenterOffset: -5
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.right: parent.right
+            font.pixelSize: 16
         }
     }
 }
