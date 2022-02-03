@@ -44,7 +44,7 @@ Rectangle {
         x: 14
         y: 114
         width: 228
-        height: 163
+        height: 158
         groupName: qsTr("Load Port Communication Setting") + appTrans.emptyString
         ComboBoxCustom {
             id: cbLPComNo
@@ -130,7 +130,7 @@ Rectangle {
         x: 261
         y: 114
         width: 227
-        height: 163
+        height: 158
         groupName: qsTr("RFID Communication Setting") + appTrans.emptyString
         CellText {
             id: labelRFIDComNo

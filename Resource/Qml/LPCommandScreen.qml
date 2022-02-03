@@ -103,6 +103,18 @@ Rectangle {
             content: "SDK_VER7-1-4"
             isReadOnly: true
         }
+
+        Button1State {
+            id: btnChangeLPVer
+            x: 8
+            y: 53
+            width: 80
+            height: 31
+            color: "#009dff"
+            radius: 3
+            nameButton: qsTr("Change")
+            border.color: "#009dff"
+        }
     }
 
     GroupBoxCustom {
@@ -211,7 +223,7 @@ Rectangle {
 
             ComboBoxCustom {
                 id: cbAllSlotSetting
-                x: 80
+                x: 85
                 y: 29
                 width: 128
                 height: 27

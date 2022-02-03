@@ -146,7 +146,7 @@ Rectangle {
 
     Rectangle {
         id: rectangle
-        width: (settingData.efemType === Enum.BOTTOM_TYPE) ? 115: 85
+        width: (settingData.efemType === Enum.BOTTOM_TYPE) ? 95: 70
         height: 29
         color: "#1c8008"
         anchors.bottom: recLogArea.bottom
@@ -156,16 +156,12 @@ Rectangle {
         Text {
             id: txtSupplyType
             x: 4
-            width: (settingData.efemType === Enum.BOTTOM_TYPE) ? 107 : 80
+            width: (settingData.efemType === Enum.BOTTOM_TYPE) ? 87 : 65
             height: 19
             color: "#ffffff"
             text: (settingData.efemType === Enum.BOTTOM_TYPE) ? qsTr("Bottom Supply") :qsTr("Top Supply")
-            //            text: qsTr("Bottom Supply")
-            anchors.rightMargin: 4
-            anchors.verticalCenterOffset: -5
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.right: parent.right
-            font.pixelSize: 16
+            anchors.centerIn: parent
+            font.pixelSize: 13
         }
     }
 }
