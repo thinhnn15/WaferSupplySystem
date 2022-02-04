@@ -19,6 +19,9 @@ Item {
         LPCommandScreen {
             width: cmdSettingScreen.width
             height: cmdSettingScreen.height
+            onOpenChgLPStateScreen: {
+                cmdSettingScreen.sourceComponent = lpStateSettingComponent;
+            }
         }
     }
     Component {
@@ -31,6 +34,14 @@ Item {
     Component {
         id: rfidCmdSettingComponent
         RFIDCommandScreen {
+            width: cmdSettingScreen.width
+            height: cmdSettingScreen.height
+        }
+    }
+
+    Component{
+        id: lpStateSettingComponent
+        LPStateSettingScreen {
             width: cmdSettingScreen.width
             height: cmdSettingScreen.height
         }

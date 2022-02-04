@@ -11,11 +11,12 @@ Rectangle {
     signal sendLPEvent(string name)
     signal setAllSlotStatus(int status)
     signal setSlotStatus(int slotNo, int status)
+    signal openChgLPStateScreen()
     Text {
         id: txtLPCommandScreen
         text: qsTr("Setting default command for Load Port:")
         font.bold: true
-        anchors.left: parent.left
+        anchors.left: parent.leftn
         anchors.leftMargin: 14
         anchors.top: parent.top
         anchors.topMargin: 8
@@ -147,6 +148,8 @@ Rectangle {
             nameButton: qsTr("Change")
             border.color: "#009dff"
             onClick: {
+                openChgLPStateScreen()
+                // open the change LP State screen
 
             }
         }

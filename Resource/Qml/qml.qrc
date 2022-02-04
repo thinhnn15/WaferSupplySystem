@@ -26,5 +26,6 @@
         <file>RFIDCommandScreen.qml</file>
         <file>Common/RadioButtonVerCustom.qml</file>
         <file>../Images/WaferIcon.ico</file>
+        <file>LPStateSettingScreen.qml</file>
     </qresource>
 </RCC>
