@@ -14,6 +14,7 @@ Rectangle {
     property string content: ""
     property int maxLenght: 5
     property string updatedContent: ""
+    property bool isNumber: true
     TextInput{
         id: textEdit
         clip: true

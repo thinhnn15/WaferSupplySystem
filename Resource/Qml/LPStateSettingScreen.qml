@@ -8,6 +8,7 @@ Rectangle {
     color: "#e0e0e0"
     radius: 5
     objectName: "chgLPStateScreen"
+    signal closeSettingLPState()
 
     Text {
         id: txtLPCommandScreen
@@ -37,16 +38,16 @@ Rectangle {
 
         RadioButtonCustom {
             id: rdEQStateErrRetryOK
-            x: 74
+            x: 76
             y: 42
-            nameRadio: "Err Retry OK"
+            nameRadio: "Err(Retry OK)"
         }
 
         RadioButtonCustom {
             id: rdEQStateErrRetryNG
-            x: 147
+            x: 151
             y: 42
-            nameRadio: "Err Retry NG"
+            nameRadio: "Err(Retry NG)"
         }
     }
 
@@ -60,14 +61,14 @@ Rectangle {
             id: rdModeHost
             x: 15
             y: 42
-            nameRadio: "HOST"
+            nameRadio: "Host"
         }
 
         RadioButtonCustom {
             id: rdModeManual
             x: 74
             y: 42
-            nameRadio: "MANUAL"
+            nameRadio: "Manual"
         }
         groupName: "Mode"
     }
@@ -109,7 +110,7 @@ Rectangle {
 
         RadioButtonCustom {
             id: rdOpeStsBusy
-            x: 74
+            x: 78
             y: 42
             nameRadio: "Busy"
         }
@@ -134,15 +135,15 @@ Rectangle {
             isReadOnly: true
         }
 
-        CellText {
+        TextEdit {
             id: txtErrCodeUpper
             x: 59
             y: 31
             width: 22
-            height: 25
-            activeFocusOnTab: true
+            height: 26
             content: "0"
             isReadOnly: false
+            maxLenght: 1
         }
 
         CellText {
@@ -154,16 +155,29 @@ Rectangle {
             content: "Lower"
             isReadOnly: true
         }
-
-        CellText {
-            id: txtErrCodeLower
+        TextEdit {
+            id: txtRBPortNo
             x: 168
             y: 31
             width: 22
-            height: 25
+            height: 26
             content: "0"
             isReadOnly: false
-            activeFocusOnTab: true
+            maxLenght: 1
+        }
+    }
+    Button1State {
+        id: btnClose
+        x: 552
+        y: 504
+        width: 80
+        height: 31
+        color: "#009dff"
+        radius: 3
+        nameButton: qsTr("Close")
+        border.color: "#009dff"
+        onClick: {
+            closeSettingLPState()
         }
     }
 }

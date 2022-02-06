@@ -44,6 +44,9 @@ Item {
         LPStateSettingScreen {
             width: cmdSettingScreen.width
             height: cmdSettingScreen.height
+            onCloseSettingLPState: {
+                cmdSettingScreen.sourceComponent = lpCmdSettingComponent;
+            }
         }
     }
 
